@@ -17,7 +17,7 @@ export default function CTA() {
             <em>Academic Journey?</em>
           </h2>
           <p className={styles.sub}>
-            Applications for the 2024/2025 academic year are open. Join over 2,500 students
+            Applications for the 2026/2025 academic year are open. Join over 2,500 students
             already building their futures at St Johns Training College.
           </p>
           <div className={styles.actions}>
@@ -29,8 +29,8 @@ export default function CTA() {
             </a>
           </div>
           <p className={styles.note}>
-            Application deadline: <strong>August 30, 2024</strong> &nbsp;·&nbsp; 
-            Intake: <strong>September 2024</strong>
+            Application deadline: <strong>August 30, 2026</strong> &nbsp;·&nbsp; 
+            Intake: <strong>September 2026</strong>
           </p>
         </div>
       </div>

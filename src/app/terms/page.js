@@ -21,7 +21,7 @@ export default function TermsPage() {
               { title: '3. Application Accuracy', body: 'All information provided during the application process must be accurate and truthful. Submission of false information is grounds for immediate rejection of application or expulsion if discovered after enrollment.' },
               { title: '4. Intellectual Property', body: 'All content on this website including text, images, logos, and course materials is the property of St Johns Training College. Reproduction without written permission is prohibited.' },
               { title: '5. Limitation of Liability', body: 'St Johns Training College is not liable for any indirect, incidental, or consequential damages arising from the use of our website or services. We do not guarantee uninterrupted access to online services.' },
-              { title: '6. Changes to Terms', body: 'We reserve the right to modify these terms at any time. Continued use of our services following notification of changes constitutes acceptance of the updated terms. Last updated: July 2024.' },
+              { title: '6. Changes to Terms', body: 'We reserve the right to modify these terms at any time. Continued use of our services following notification of changes constitutes acceptance of the updated terms. Last updated: July 2026.' },
             ].map((s, i) => (
               <div key={i} style={{ marginBottom: 32 }}>
                 <h3 style={{ fontSize: '1.15rem', color: 'var(--green-900)', marginBottom: 10 }}>{s.title}</h3>

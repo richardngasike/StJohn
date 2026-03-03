@@ -41,7 +41,7 @@ export default function PortalPage() {
     } catch {
       // demo data
       setApplications([
-        { id: 1, reference_number: 'SJC-001234', program: 'Diploma in Information Technology', intake: 'September 2024', status: 'under_review', created_at: '2024-07-10', study_mode: 'Full-time' },
+        { id: 1, reference_number: 'SJC-001234', program: 'Diploma in Information Technology', intake: 'September 2026', status: 'under_review', created_at: '2026-07-10', study_mode: 'Full-time' },
       ]);
     }
   };
@@ -235,7 +235,7 @@ export default function PortalPage() {
                   <div className={styles.notifItem}>
                     <div className={styles.notifDot} style={{ background: 'var(--gold-500)' }} />
                     <div>
-                      <p>September 2024 intake deadline: Aug 30</p>
+                      <p>September 2026 intake deadline: Aug 30</p>
                       <span>5 days ago</span>
                     </div>
                   </div>

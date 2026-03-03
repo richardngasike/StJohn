@@ -21,7 +21,7 @@ export default function PrivacyPage() {
               { title: '3. Data Security', body: 'We implement industry-standard security measures including SSL encryption, secure servers, and access controls to protect your personal information from unauthorized access.' },
               { title: '4. Sharing of Information', body: 'We do not sell your personal information. We may share information with accreditation bodies, government agencies for compliance, and trusted service providers who assist our operations.' },
               { title: '5. Your Rights', body: 'You have the right to access, correct, or delete your personal data. You may also opt out of marketing communications at any time by contacting us at privacy@stjohnscollege.ac.ke.' },
-              { title: '6. Contact Us', body: 'For privacy-related enquiries, contact our Data Protection Officer at privacy@stjohnscollege.ac.ke or call +254 700 000 000. Last updated: July 2024.' },
+              { title: '6. Contact Us', body: 'For privacy-related enquiries, contact our Data Protection Officer at privacy@stjohnscollege.ac.ke or call +254 700 000 000. Last updated: July 2026.' },
             ].map((s, i) => (
               <div key={i} style={{ marginBottom: 32 }}>
                 <h3 style={{ fontSize: '1.15rem', color: 'var(--green-900)', marginBottom: 10 }}>{s.title}</h3>

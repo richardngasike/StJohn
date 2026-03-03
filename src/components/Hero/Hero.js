@@ -22,13 +22,13 @@ const slides = [
   },
   {
     id: 2,
-    tag: '2024/2025 Admissions Open',
+    tag: '2026/2025 Admissions Open',
     title: 'Your Future Starts\nHere Today',
     subtitle: 'Join thousands of successful graduates who began their journey at St Johns. Applications for the new academic year are now open.',
     cta: { label: 'Apply Online', href: '/apply' },
     cta2: { label: 'Learn More', href: '/about' },
     bg: 'slide2',
-    accent: 'Deadline: August 30, 2024',
+    accent: 'Deadline: August 30, 2026',
     stat: { value: '2,500+', label: 'Students Enrolled' },
   },
   {

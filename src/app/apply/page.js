@@ -142,7 +142,7 @@ export default function ApplyPage() {
               <a href="/">Home</a><span className="sep">/</span><span>Apply</span>
             </div>
             <h1>Online Application</h1>
-            <p>Complete your application for the 2024/2025 academic year. Takes about 10-15 minutes.</p>
+            <p>Complete your application for the 2026/2025 academic year. Takes about 10-15 minutes.</p>
           </div>
         </div>
       </div>
@@ -249,7 +249,7 @@ export default function ApplyPage() {
                         <label className="form-label">KCSE Year <span className="required">*</span></label>
                         <select className={`form-select ${errors.kcseYear ? 'error' : ''}`} value={form.kcseYear} onChange={e => update('kcseYear', e.target.value)}>
                           <option value="">Select year</option>
-                          {Array.from({ length: 15 }, (_, i) => 2024 - i).map(y => <option key={y}>{y}</option>)}
+                          {Array.from({ length: 15 }, (_, i) => 2026 - i).map(y => <option key={y}>{y}</option>)}
                         </select>
                         {errors.kcseYear && <p className="form-error">{errors.kcseYear}</p>}
                       </div>
@@ -285,7 +285,7 @@ export default function ApplyPage() {
                         <label className="form-label">Preferred Intake <span className="required">*</span></label>
                         <select className={`form-select ${errors.intake ? 'error' : ''}`} value={form.intake} onChange={e => update('intake', e.target.value)}>
                           <option value="">Select intake</option>
-                          <option>September 2024</option>
+                          <option>September 2026</option>
                           <option>January 2025</option>
                           <option>May 2025</option>
                         </select>

@@ -25,7 +25,7 @@ const milestones = [
   { year: '2013', event: 'Launched computer science and IT programs' },
   { year: '2018', event: 'Achieved ISO 9001:2015 Quality Management certification' },
   { year: '2021', event: 'Launched online student portal and digital learning platform' },
-  { year: '2024', event: '30 years of excellence — 15,000+ graduates across East Africa' },
+  { year: '2026', event: '30 years of excellence — 15,000+ graduates across East Africa' },
 ];
 
 export default function AboutPage() {

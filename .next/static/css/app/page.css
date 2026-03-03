@@ -346,7 +346,7 @@
   inset: 0;
   background: linear-gradient(
     105deg,
-    rgba(5, 20, 12, 0.78) 0%,
+    rgba(5, 20, 12, 0.78) 20%,
     rgba(10, 30, 18, 0.60) 50%,
     rgba(15, 20, 10, 0.45) 100%
   );

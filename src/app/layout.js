@@ -8,7 +8,7 @@ export const metadata = {
     default: 'St Johns Training College | Excellence in Education',
     template: '%s | St Johns Training College',
   },
-  description: 'St Johns Training College is a premier institution offering quality education and training programs in Kenya. Apply now for the 2024/2025 academic year.',
+  description: 'St Johns Training College is a premier institution offering quality education and training programs in Kenya. Apply now for the 2026/2025 academic year.',
   keywords: ['St Johns Training College', 'Kenya college', 'higher education Kenya', 'training college Samburu'],
   authors: [{ name: 'St Johns Training College' }],
   themeColor: '#1f4d35',

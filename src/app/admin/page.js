@@ -12,17 +12,17 @@ import Cookies from 'js-cookie';
 import styles from './admin.module.css';
 
 const ADMIN_EMAIL    = 'admin@stjohnscollege.ac.ke';
-const ADMIN_PASSWORD = 'Admin@2024';
+const ADMIN_PASSWORD = 'Admin@2026';
 
 const demoApplications = [
-  { id: 1, reference_number: 'SJC-001001', first_name: 'Grace', last_name: 'Wanjiku', email: 'grace@email.com', phone: '+254 712 000 001', program: 'Diploma in Information Technology', intake: 'September 2024', study_mode: 'Full-time', kcse_grade: 'B+', status: 'pending', created_at: '2024-07-01' },
-  { id: 2, reference_number: 'SJC-001002', first_name: 'Daniel', last_name: 'Omondi',  email: 'daniel@email.com', phone: '+254 712 000 002', program: 'Diploma in Business Administration', intake: 'September 2024', study_mode: 'Part-time', kcse_grade: 'B', status: 'under_review', created_at: '2024-07-03' },
-  { id: 3, reference_number: 'SJC-001003', first_name: 'Fatuma', last_name: 'Hassan',  email: 'fatuma@email.com', phone: '+254 712 000 003', program: 'Certificate in Community Health', intake: 'September 2024', study_mode: 'Full-time', kcse_grade: 'C+', status: 'approved', created_at: '2024-07-05' },
-  { id: 4, reference_number: 'SJC-001004', first_name: 'Peter', last_name: 'Kimani',   email: 'peter@email.com', phone: '+254 712 000 004', program: 'Diploma in Electrical Engineering', intake: 'September 2024', study_mode: 'Full-time', kcse_grade: 'B-', status: 'rejected', created_at: '2024-07-06' },
-  { id: 5, reference_number: 'SJC-001005', first_name: 'Amina', last_name: 'Mwangi',   email: 'amina@email.com', phone: '+254 712 000 005', program: 'Certificate in Accounting & Finance', intake: 'January 2025', study_mode: 'Evening', kcse_grade: 'C+', status: 'pending', created_at: '2024-07-08' },
-  { id: 6, reference_number: 'SJC-001006', first_name: 'James', last_name: 'Otieno',   email: 'james@email.com', phone: '+254 712 000 006', program: 'Certificate in Early Childhood Education', intake: 'September 2024', study_mode: 'Full-time', kcse_grade: 'C', status: 'under_review', created_at: '2024-07-09' },
-  { id: 7, reference_number: 'SJC-001007', first_name: 'Lucy', last_name: 'Njoroge',   email: 'lucy@email.com', phone: '+254 712 000 007', program: 'Diploma in Information Technology', intake: 'January 2025', study_mode: 'Full-time', kcse_grade: 'A-', status: 'approved', created_at: '2024-07-10' },
-  { id: 8, reference_number: 'SJC-001008', first_name: 'Kevin', last_name: 'Mutua',    email: 'kevin@email.com', phone: '+254 712 000 008', program: 'Short Course: Digital Marketing', intake: 'September 2024', study_mode: 'Weekend', kcse_grade: 'C-', status: 'pending', created_at: '2024-07-11' },
+  { id: 1, reference_number: 'SJC-001001', first_name: 'Grace', last_name: 'Wanjiku', email: 'grace@email.com', phone: '+254 712 000 001', program: 'Diploma in Information Technology', intake: 'September 2026', study_mode: 'Full-time', kcse_grade: 'B+', status: 'pending', created_at: '2026-07-01' },
+  { id: 2, reference_number: 'SJC-001002', first_name: 'Daniel', last_name: 'Omondi',  email: 'daniel@email.com', phone: '+254 712 000 002', program: 'Diploma in Business Administration', intake: 'September 2026', study_mode: 'Part-time', kcse_grade: 'B', status: 'under_review', created_at: '2026-07-03' },
+  { id: 3, reference_number: 'SJC-001003', first_name: 'Fatuma', last_name: 'Hassan',  email: 'fatuma@email.com', phone: '+254 712 000 003', program: 'Certificate in Community Health', intake: 'September 2026', study_mode: 'Full-time', kcse_grade: 'C+', status: 'approved', created_at: '2026-07-05' },
+  { id: 4, reference_number: 'SJC-001004', first_name: 'Peter', last_name: 'Kimani',   email: 'peter@email.com', phone: '+254 712 000 004', program: 'Diploma in Electrical Engineering', intake: 'September 2026', study_mode: 'Full-time', kcse_grade: 'B-', status: 'rejected', created_at: '2026-07-06' },
+  { id: 5, reference_number: 'SJC-001005', first_name: 'Amina', last_name: 'Mwangi',   email: 'amina@email.com', phone: '+254 712 000 005', program: 'Certificate in Accounting & Finance', intake: 'January 2025', study_mode: 'Evening', kcse_grade: 'C+', status: 'pending', created_at: '2026-07-08' },
+  { id: 6, reference_number: 'SJC-001006', first_name: 'James', last_name: 'Otieno',   email: 'james@email.com', phone: '+254 712 000 006', program: 'Certificate in Early Childhood Education', intake: 'September 2026', study_mode: 'Full-time', kcse_grade: 'C', status: 'under_review', created_at: '2026-07-09' },
+  { id: 7, reference_number: 'SJC-001007', first_name: 'Lucy', last_name: 'Njoroge',   email: 'lucy@email.com', phone: '+254 712 000 007', program: 'Diploma in Information Technology', intake: 'January 2025', study_mode: 'Full-time', kcse_grade: 'A-', status: 'approved', created_at: '2026-07-10' },
+  { id: 8, reference_number: 'SJC-001008', first_name: 'Kevin', last_name: 'Mutua',    email: 'kevin@email.com', phone: '+254 712 000 008', program: 'Short Course: Digital Marketing', intake: 'September 2026', study_mode: 'Weekend', kcse_grade: 'C-', status: 'pending', created_at: '2026-07-11' },
 ];
 
 const statusConfig = {
@@ -158,7 +158,7 @@ export default function AdminPage() {
 
             <div className={styles.loginHint}>
               <FiLock size={11} />
-              <span>Demo: <strong>admin@stjohnscollege.ac.ke</strong> / <strong>Admin@2024</strong></span>
+              <span>Demo: <strong>admin@stjohnscollege.ac.ke</strong> / <strong>Admin@2026</strong></span>
             </div>
 
             <button type="submit" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }} disabled={loading}>
