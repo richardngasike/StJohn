@@ -1,0 +1,115 @@
+.cta {
+  padding: 96px 0;
+  background: var(--brown-50);
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--border-light);
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 100%, rgba(42, 122, 82, 0.08) 0%, transparent 60%);
+}
+
+.inner {
+  position: relative;
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.icon {
+  width: 72px;
+  height: 72px;
+  background: linear-gradient(135deg, var(--green-700) 0%, var(--green-600) 100%);
+  color: white;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 28px;
+  box-shadow: var(--shadow-green);
+}
+
+.title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--green-900);
+  margin-bottom: 20px;
+  line-height: 1.15;
+}
+
+.title em {
+  font-style: italic;
+  color: var(--green-600);
+}
+
+.sub {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  line-height: 1.75;
+  margin-bottom: 36px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--green-700);
+  color: white;
+  padding: 16px 36px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.25s;
+}
+
+.btnPrimary:hover {
+  background: var(--green-800);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-green);
+}
+
+.btnSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: var(--green-700);
+  padding: 16px 32px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid var(--green-300);
+  transition: all 0.25s;
+}
+
+.btnSecondary:hover {
+  background: var(--green-50);
+  border-color: var(--green-600);
+  transform: translateY(-2px);
+}
+
+.note {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.note strong { color: var(--text-medium); }
+
+@media (max-width: 480px) {
+  .actions { flex-direction: column; width: 100%; }
+  .btnPrimary, .btnSecondary { width: 100%; justify-content: center; }
+}
