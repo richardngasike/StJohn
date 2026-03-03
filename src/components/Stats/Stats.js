@@ -8,7 +8,7 @@ import styles from './Stats.module.css';
 const stats = [
   { icon: FiUsers,  value: 2500, suffix: '+', label: 'Students Enrolled',   desc: 'Active learners across all programs' },
   { icon: FiBook,   value: 40,   suffix: '+', label: 'Programs Offered',    desc: 'Certificate, diploma & short courses' },
-  { icon: FiAward,  value: 30,   suffix: '+', label: 'Years of Excellence', desc: 'Proudly educating since 1994' },
+  { icon: FiAward,  value: 30,   suffix: '+', label: 'Years of Excellence', desc: 'Proudly educating since 2010' },
   { icon: FiBriefcase, value: 98, suffix: '%', label: 'Employment Rate',   desc: 'Graduates placed within 6 months' },
   { icon: MdOutlineSchool, value: 15000, suffix: '+', label: 'Alumni Network', desc: 'Professionals across East Africa' },
 ];

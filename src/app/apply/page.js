@@ -230,7 +230,7 @@ export default function ApplyPage() {
                       </div>
                       <div className="form-group">
                         <label className="form-label">County of Residence</label>
-                        <input className="form-input" value={form.county} onChange={e => update('county', e.target.value)} placeholder="e.g. Nairobi" />
+                        <input className="form-input" value={form.county} onChange={e => update('county', e.target.value)} placeholder="e.g. Samburu" />
                       </div>
                     </div>
                   </div>
@@ -241,7 +241,7 @@ export default function ApplyPage() {
                   <div className={styles.formBody}>
                     <div className="form-group">
                       <label className="form-label">Secondary School Name <span className="required">*</span></label>
-                      <input className={`form-input ${errors.schoolName ? 'error' : ''}`} value={form.schoolName} onChange={e => update('schoolName', e.target.value)} placeholder="e.g. Nairobi High School" />
+                      <input className={`form-input ${errors.schoolName ? 'error' : ''}`} value={form.schoolName} onChange={e => update('schoolName', e.target.value)} placeholder="e.g. Samburu High School" />
                       {errors.schoolName && <p className="form-error">{errors.schoolName}</p>}
                     </div>
                     <div className={styles.formRow}>

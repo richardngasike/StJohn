@@ -49,7 +49,7 @@ export default function Footer() {
                 </div>
               </Link>
               <p className={styles.brandDesc}>
-                Empowering Kenya's future through quality education, practical skills, and character development since 1994.
+                Empowering Kenya's future through quality education, practical skills, and character development since 2010.
               </p>
 
               <div className={styles.accreditation}>
@@ -120,7 +120,7 @@ export default function Footer() {
                   <div>
                     <p className={styles.contactLabel}>Address</p>
                     <p className={styles.contactValue}>123 College Road</p>
-                    <p className={styles.contactValue}>Nairobi, Kenya</p>
+                    <p className={styles.contactValue}>Samburu, Kenya</p>
                   </div>
                 </div>
               </div>

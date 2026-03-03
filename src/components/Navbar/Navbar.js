@@ -88,7 +88,7 @@ export default function Navbar() {
               <FiMail size={12} /> info@stjohnscollege.ac.ke
             </a>
             <span className={styles.topContactItem}>
-              <MdOutlineLocationOn size={12} /> Nairobi, Kenya
+              <MdOutlineLocationOn size={12} /> Samburu, Kenya
             </span>
           </div>
           <div className={styles.topActions}>

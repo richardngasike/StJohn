@@ -23,7 +23,7 @@ export default function About() {
               <div className={styles.imgPlaceholder}>
                 <MdOutlineSchool size={64} />
                 <p>St Johns Campus</p>
-                <span>Established 1994</span>
+                <span>Established 2010</span>
               </div>
             </div>
             <div className={styles.imgCard}>
@@ -46,7 +46,7 @@ export default function About() {
               A Legacy of <span>Academic Excellence</span> in Kenya
             </h2>
             <p className={styles.lead}>
-              Founded in 1994, St Johns Training College has grown to become one of Kenya's most respected
+              Founded in 2010, St Johns Training College has grown to become one of Kenya's most respected
               technical and vocational training institutions, dedicated to producing competent, ethical,
               and employable graduates.
             </p>

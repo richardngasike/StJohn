@@ -74,7 +74,7 @@ export default function AboutPage() {
               <div className="section-label">Our Story</div>
               <h2 className="section-title">10 Years of <span>Transforming Lives</span></h2>
               <p className={styles.historyLead}>
-                St Johns Training College was established in 2010 with a vision to provide accessible quality education in Nairobi. Starting with just three programs and 45 students, we have grown into a premier institution serving over 2,500 students annually.
+                St Johns Training College was established in 2010 with a vision to provide accessible quality education in Samburu. Starting with just three programs and 45 students, we have grown into a premier institution serving over 2,500 students annually.
               </p>
               <p className={styles.historyBody}>
                 Over three decades, we have continuously evolved our programs, expanded our facilities, and deepened our industry partnerships. Our commitment to quality has earned us full accreditation from KNEC, NITA, and TVETA, as well as ISO 9001:2015 certification for quality management.

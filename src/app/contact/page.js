@@ -80,7 +80,7 @@ export default function ContactPage() {
             {[
               { icon: FiPhone, title: 'Call Us', lines: ['+254 700 000 000', '+254 711 000 000'], note: 'Mon–Fri, 8am–5pm', color: 'green', href: 'tel:+254700000000' },
               { icon: FiMail, title: 'Email Us', lines: ['info@stjohnscollege.ac.ke', 'admissions@stjohnscollege.ac.ke'], note: 'We reply within 24 hours', color: 'gold', href: 'mailto:info@stjohnscollege.ac.ke' },
-              { icon: FiMapPin, title: 'Visit Us', lines: ['123 College Road', 'Nairobi, Kenya'], note: 'P.O. Box 00100', color: 'brown', href: '#map' },
+              { icon: FiMapPin, title: 'Visit Us', lines: ['123 College Road', 'Samburu, Kenya'], note: 'P.O. Box 00100', color: 'brown', href: '#map' },
               { icon: FiClock, title: 'Office Hours', lines: ['Mon–Fri: 8:00am – 5:00pm', 'Sat: 9:00am – 1:00pm'], note: 'Closed Sundays & Public Holidays', color: 'green' },
             ].map((c, i) => (
               <a key={i} href={c.href || '#'} className={`${styles.infoCard} ${styles[`infoCard_${c.color}`]}`} style={{ textDecoration: 'none' }}>
@@ -160,7 +160,7 @@ export default function ContactPage() {
                 <div className={styles.mapPlaceholder}>
                   <FiMapPin size={40} />
                   <h4>St Johns Training College</h4>
-                  <p>123 College Road, Nairobi, Kenya</p>
+                  <p>123 College Road, Samburu, Kenya</p>
                   <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm" style={{ marginTop: 12 }}>
                     Open in Google Maps
                   </a>

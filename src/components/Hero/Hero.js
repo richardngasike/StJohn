@@ -191,7 +191,7 @@ export default function Hero() {
             <div className={styles.statValue}>{slide.stat.value}</div>
             <div className={styles.statLabel}>{slide.stat.label}</div>
             <div className={styles.statCardLine} />
-            <p className={styles.statDesc}>St Johns Training College — proudly shaping Kenya's future professionals since 1994.</p>
+            <p className={styles.statDesc}>St Johns Training College — proudly shaping Kenya's future professionals since 2010.</p>
           </div>
         </div>
       </div>

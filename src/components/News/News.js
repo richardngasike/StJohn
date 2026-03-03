@@ -41,7 +41,7 @@ const news = [
     id: 4,
     category: 'Achievements',
     tag: 'Award',
-    title: 'College Ranked Best TVET Institution in Nairobi County',
+    title: 'College Ranked Best TVET Institution in Samburu County',
     excerpt: 'St Johns Training College has been recognized by the Kenya National Qualifications Authority for outstanding academic quality.',
     date: 'June 20, 2024',
     readTime: '3 min read',
