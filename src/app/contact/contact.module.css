@@ -1,0 +1,281 @@
+.infoSection {
+  padding: 0;
+  margin-top: -48px;
+  position: relative;
+  z-index: 10;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding: 0 0 0;
+}
+
+.infoCard {
+  background: white;
+  border-radius: 16px;
+  padding: 28px 22px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-light);
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.infoCard:hover { transform: translateY(-4px); }
+
+.infoCard_green:hover { border-color: var(--green-300); }
+.infoCard_gold:hover  { border-color: var(--gold-300); }
+.infoCard_brown:hover { border-color: var(--brown-300); }
+
+.infoCardIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.infoCard_green .infoCardIcon { background: var(--green-100); color: var(--green-700); }
+.infoCard_gold  .infoCardIcon { background: var(--gold-100);  color: var(--gold-700); }
+.infoCard_brown .infoCardIcon { background: var(--brown-100); color: var(--brown-700); }
+
+.infoCard h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--green-900);
+  margin-bottom: 4px;
+}
+
+.infoCard p {
+  font-size: 0.86rem;
+  color: var(--text-medium);
+  line-height: 1.5;
+}
+
+.infoCard span {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* Main Grid */
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 40px;
+  align-items: start;
+}
+
+/* Form */
+.formWrap {
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.formHeader {
+  background: var(--green-50);
+  border-bottom: 1px solid var(--green-100);
+  padding: 28px 32px;
+}
+
+.formHeader h2 { font-size: 1.5rem; margin-bottom: 6px; }
+.formHeader p  { color: var(--text-light); font-size: 0.9rem; }
+
+.form {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.formRow { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+.inputWrap { position: relative; }
+
+.inputIcon {
+  position: absolute;
+  left: 12px;
+  top: 13px;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.textareaIcon { top: 14px; }
+
+/* Map Side */
+.mapSide { display: flex; flex-direction: column; gap: 20px; }
+
+.mapBox {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.mapPlaceholder {
+  height: 260px;
+  background: linear-gradient(135deg, var(--green-800), var(--green-700));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.7);
+  gap: 8px;
+  text-align: center;
+  padding: 20px;
+}
+
+.mapPlaceholder h4 { color: white; font-size: 1.1rem; }
+.mapPlaceholder p  { font-size: 0.88rem; }
+
+/* Social */
+.socialCard {
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: var(--shadow-sm);
+}
+
+.socialCard h4 { font-size: 1rem; color: var(--green-900); margin-bottom: 6px; }
+.socialCard p  { font-size: 0.83rem; color: var(--text-muted); margin-bottom: 16px; }
+
+.socials { display: flex; flex-direction: column; gap: 8px; }
+
+.socialBtn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 14px;
+  border-radius: 8px;
+  background: var(--green-50);
+  color: var(--text-medium);
+  text-decoration: none;
+  font-size: 0.86rem;
+  font-weight: 500;
+  border: 1px solid var(--border-light);
+  transition: all 0.2s;
+}
+
+.socialBtn:hover {
+  background: var(--sc, var(--green-600));
+  color: white;
+  border-color: transparent;
+}
+
+/* Emergency */
+.emergencyCard {
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: var(--shadow-sm);
+}
+
+.emergencyCard h4 { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 14px; }
+
+.emergencyItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 0.86rem;
+}
+
+.emergencyItem:last-child { border-bottom: none; }
+.emergencyItem span { color: var(--text-medium); }
+.emergencyItem a { color: var(--green-700); font-weight: 700; text-decoration: none; }
+.emergencyItem a:hover { text-decoration: underline; }
+
+/* FAQ */
+.faqSection { background: var(--off-white); }
+
+.faqInner {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.faqLeft { position: sticky; top: 120px; }
+
+.faqList { display: flex; flex-direction: column; gap: 0; }
+
+.faqItem {
+  border-bottom: 1px solid var(--border-light);
+  overflow: hidden;
+}
+
+.faqItem:first-child { border-top: 1px solid var(--border-light); }
+
+.faqQ {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  transition: color 0.2s;
+}
+
+.faqQ:hover { color: var(--green-700); }
+.faqItemOpen .faqQ { color: var(--green-700); }
+
+.faqChevron {
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  color: var(--text-muted);
+}
+
+.faqItemOpen .faqChevron { transform: rotate(180deg); color: var(--green-600); }
+
+.faqA {
+  padding: 0 0 18px;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  line-height: 1.75;
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .mainGrid { grid-template-columns: 1fr; }
+  .mapSide { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .mapBox  { grid-column: span 2; }
+}
+
+@media (max-width: 900px) {
+  .infoGrid { grid-template-columns: repeat(2, 1fr); }
+  .faqInner { grid-template-columns: 1fr; }
+  .faqLeft  { position: static; }
+}
+
+@media (max-width: 640px) {
+  .infoGrid { grid-template-columns: 1fr; }
+  .formRow  { grid-template-columns: 1fr; }
+  .mapSide  { display: flex; flex-direction: column; }
+  .form     { padding: 20px; }
+  .formHeader { padding: 20px; }
+}

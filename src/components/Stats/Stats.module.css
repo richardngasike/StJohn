@@ -1,0 +1,105 @@
+.stats {
+  background: linear-gradient(135deg, var(--green-900) 0%, var(--green-800) 60%, var(--brown-800) 100%);
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.bgDecor {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 10% 50%, rgba(201,162,39,0.08) 0%, transparent 45%),
+    radial-gradient(circle at 90% 50%, rgba(58,148,100,0.08) 0%, transparent 45%);
+}
+
+.inner { position: relative; z-index: 1; }
+
+.heading {
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.title {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  color: white;
+  margin-bottom: 12px;
+}
+
+.sub {
+  color: rgba(255,255,255,0.6);
+  font-size: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 28px 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+  animation: cardIn 0.5s ease both;
+}
+
+.card:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(201,162,39,0.3);
+  transform: translateY(-4px);
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.icon {
+  width: 52px;
+  height: 52px;
+  background: rgba(201,162,39,0.2);
+  color: var(--gold-300);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.value {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: white;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.suffix { color: var(--gold-300); }
+
+.label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 6px;
+}
+
+.desc {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.4;
+}
+
+@media (max-width: 1024px) {
+  .grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  .card:last-child { grid-column: span 2; }
+}
