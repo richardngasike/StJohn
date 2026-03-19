@@ -1,3 +1,6 @@
+/* ───────────────────────────────
+   FILTERS
+─────────────────────────────── */
 .filters {
   display: flex;
   align-items: center;
@@ -7,7 +10,11 @@
   flex-wrap: wrap;
 }
 
-.filterTabs { display: flex; gap: 8px; flex-wrap: wrap; }
+.filterTabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
 
 .filterTab {
   padding: 8px 16px;
@@ -21,20 +28,75 @@
   transition: all 0.2s;
 }
 
-.filterTab:hover { border-color: var(--green-400); color: var(--green-700); }
-.filterTabActive { background: var(--green-700); color: white; border-color: var(--green-700); }
+.filterTab:hover {
+  border-color: var(--green-400);
+  color: var(--green-700);
+}
 
-.searchBar { position: relative; min-width: 240px; }
-.searchIcon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted); }
-.searchInput { width: 100%; padding: 10px 16px 10px 36px; border: 1.5px solid var(--border-medium); border-radius: 8px; font-size: 0.9rem; outline: none; transition: border-color 0.2s; background: white; }
-.searchInput:focus { border-color: var(--green-500); }
+.filterTabActive {
+  background: var(--green-700);
+  color: white;
+  border-color: var(--green-700);
+}
 
-.empty { text-align: center; padding: 80px 20px; color: var(--text-muted); display: flex; flex-direction: column; align-items: center; gap: 12px; }
-.empty h3 { color: var(--text-medium); }
+.searchBar {
+  position: relative;
+  min-width: 240px;
+}
 
-.layout { display: flex; flex-direction: column; gap: 40px; }
+.searchIcon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+}
 
-/* Featured */
+.searchInput {
+  width: 100%;
+  padding: 10px 16px 10px 36px;
+  border: 1.5px solid var(--border-medium);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+  background: white;
+  box-sizing: border-box;
+}
+
+.searchInput:focus {
+  border-color: var(--green-500);
+}
+
+/* ───────────────────────────────
+   EMPTY STATE
+─────────────────────────────── */
+.empty {
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.empty h3 {
+  color: var(--text-medium);
+}
+
+/* ───────────────────────────────
+   LAYOUT
+─────────────────────────────── */
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* ───────────────────────────────
+   FEATURED ARTICLE
+─────────────────────────────── */
 .featured {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -48,39 +110,54 @@
   transition: all 0.3s;
 }
 
-.featured:hover { box-shadow: var(--shadow-xl); transform: translateY(-2px); }
+.featured:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-2px);
+}
 
 .featImg {
-  min-height: 340px;
   position: relative;
+  min-height: 360px;
 }
 
-.featImgPlaceholder {
-  width: 100%;
-  height: 100%;
-  min-height: 340px;
-  background: linear-gradient(135deg, var(--green-800), var(--green-700));
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255,255,255,0.5);
-  gap: 12px;
+/* Dark overlay so text on image (if any) stays readable */
+.featImgOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.15) 100%);
+  z-index: 1;
+  pointer-events: none;
 }
-
-.featImgPlaceholder span { font-size: 0.85rem; color: rgba(255,255,255,0.6); }
 
 .featContent {
-  padding: 36px;
+  padding: 40px 36px;
   display: flex;
   flex-direction: column;
   gap: 16px;
   justify-content: center;
 }
 
-.featMeta { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.featMeta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
 
-.metaDate, .metaRead {
+.featTagPill {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--green-100);
+  color: var(--green-800);
+}
+
+.metaDate,
+.metaRead {
   display: flex;
   align-items: center;
   gap: 5px;
@@ -95,7 +172,9 @@
   font-weight: 700;
 }
 
-.featured:hover .featTitle { color: var(--green-700); }
+.featured:hover .featTitle {
+  color: var(--green-700);
+}
 
 .featExcerpt {
   font-size: 0.93rem;
@@ -114,9 +193,13 @@
   transition: gap 0.2s;
 }
 
-.featured:hover .featReadMore { gap: 10px; }
+.featured:hover .featReadMore {
+  gap: 10px;
+}
 
-/* Grid */
+/* ───────────────────────────────
+   NEWS GRID
+─────────────────────────────── */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -135,22 +218,25 @@
   flex-direction: column;
 }
 
-.card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); border-color: var(--green-200); }
+.card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+  border-color: var(--green-200);
+}
 
 .cardImg {
-  height: 180px;
+  height: 200px;
   position: relative;
   flex-shrink: 0;
 }
 
-.cardImgPlaceholder {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, var(--green-700), var(--brown-700));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255,255,255,0.4);
+/* Subtle overlay on card images */
+.cardImgOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.18) 100%);
+  z-index: 1;
+  pointer-events: none;
 }
 
 .cardBadge {
@@ -158,6 +244,7 @@
   top: 12px;
   left: 12px;
   font-size: 0.7rem;
+  z-index: 2;
 }
 
 .cardContent {
@@ -175,7 +262,9 @@
   line-height: 1.35;
 }
 
-.card:hover .cardTitle { color: var(--green-700); }
+.card:hover .cardTitle {
+  color: var(--green-700);
+}
 
 .cardExcerpt {
   font-size: 0.84rem;
@@ -195,7 +284,11 @@
   color: var(--text-muted);
 }
 
-.cardMeta span { display: flex; align-items: center; gap: 4px; }
+.cardMeta span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
 
 .cardReadMore {
   display: inline-flex;
@@ -207,17 +300,107 @@
   transition: gap 0.2s;
 }
 
-.card:hover .cardReadMore { gap: 8px; }
-
-@media (max-width: 1024px) {
-  .grid { grid-template-columns: repeat(2, 1fr); }
-  .featured { grid-template-columns: 1fr; }
-  .featImg { min-height: 220px; }
+.card:hover .cardReadMore {
+  gap: 8px;
 }
 
+/* ───────────────────────────────
+   RESPONSIVE
+─────────────────────────────── */
+
+/* Tablet landscape */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .featured {
+    grid-template-columns: 1fr;
+  }
+
+  .featImg {
+    min-height: 260px;
+  }
+
+  .featContent {
+    padding: 28px 28px;
+  }
+
+  .featTitle {
+    font-size: 1.3rem;
+  }
+}
+
+/* Tablet portrait */
+@media (max-width: 768px) {
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .searchBar {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .featImg {
+    min-height: 220px;
+  }
+
+  .featContent {
+    padding: 24px 20px;
+  }
+}
+
+/* Mobile */
 @media (max-width: 640px) {
-  .grid { grid-template-columns: 1fr; }
-  .filters { flex-direction: column; align-items: stretch; }
-  .searchBar { min-width: unset; }
-  .featContent { padding: 20px; }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filterTabs {
+    gap: 6px;
+  }
+
+  .filterTab {
+    padding: 7px 12px;
+    font-size: 0.82rem;
+  }
+
+  .featTitle {
+    font-size: 1.15rem;
+  }
+
+  .featExcerpt {
+    font-size: 0.88rem;
+  }
+
+  .featImg {
+    min-height: 200px;
+  }
+
+  .featContent {
+    padding: 20px 16px;
+    gap: 12px;
+  }
+
+  .cardImg {
+    height: 180px;
+  }
+
+  .cardContent {
+    padding: 16px;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 380px) {
+  .featTitle {
+    font-size: 1rem;
+  }
+
+  .filterTab {
+    font-size: 0.78rem;
+    padding: 6px 10px;
+  }
 }

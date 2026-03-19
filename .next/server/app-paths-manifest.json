@@ -1,3 +1,7 @@
 {
+  "/contact/page": "app/contact/page.js",
+  "/news/page": "app/news/page.js",
+  "/news/[id]/page": "app/news/[id]/page.js",
+  "/apply/page": "app/apply/page.js",
   "/page": "app/page.js"
 }

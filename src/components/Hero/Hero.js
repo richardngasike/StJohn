@@ -60,7 +60,7 @@ const bgImages = [
   '/images/hero.png',
   '/images/bg.jpeg',
   '/images/hero3.png',
-  '/images/hero4.png',
+  '/images/aboutsection2.png',
 ];
 
 export default function Hero() {

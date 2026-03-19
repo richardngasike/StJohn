@@ -355,12 +355,15 @@ ul, ol {
   background: var(--border-light);
   margin: 40px 0;
 }
-
-/* Page Header */
 .page-header {
-  background: linear-gradient(135deg, var(--green-900) 0%, var(--green-700) 60%, var(--brown-700) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--green-900) 0%,
+    var(--green-700) 60%,
+    var(--brown-700) 100%
+  );
   padding: 120px 0 80px;
-  position: covers;
+  position: relative; /* FIXED */
   overflow: hidden;
   margin-top: var(--navbar-height);
 }
@@ -369,10 +372,10 @@ ul, ol {
   content: '';
   position: absolute;
   inset: 0;
-  background: url('/images/pattern.svg') repeat;
+  background: url('/images/aboutsection.png') no-repeat center center;
+  background-size: cover;
   opacity: 0.34;
 }
-
 .page-header-content {
   position: relative;
   z-index: 1;

@@ -1,137 +1,242 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 import { FiStar, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
-import { MdFormatQuote } from 'react-icons/md';
 import styles from './Testimonials.module.css';
 
 const testimonials = [
   {
-    name: 'Grace Wanjiku',
-    role: 'IT Professional at Safaricom',
+    name: 'Richard Ngasike',
+    role: 'IT Professional',
+    company: 'Samburu County',
     program: 'Diploma in Information Technology, 2022',
     text: 'St Johns gave me not just technical knowledge but the confidence to compete in the job market. I secured my job at Safaricom three months after graduation. The lecturers are dedicated and the facilities are excellent.',
     rating: 5,
     initials: 'GW',
+    image: '/images/richard.jpg',
+    accent: 'var(--green-400)',
   },
   {
-    name: 'Daniel Omondi',
-    role: 'Entrepreneur & Business Owner',
+    name: 'Selina Lelesit',
+    role: 'Entrepreneur',
+    company: 'Self-employed',
     program: 'Diploma in Business Administration, 2021',
     text: 'The business program at St Johns was transformative. The practical approach, case studies, and mentorship I received helped me start my own company. Today I employ 12 people. I owe my success to this institution.',
     rating: 5,
     initials: 'DO',
+    image: '/images/selina.png',
+    accent: 'var(--gold-400)',
   },
   {
     name: 'Fatuma Hassan',
-    role: 'Community Health Officer, Ministry of Health',
+    role: 'Community Health Officer',
+    company: 'Ministry of Health',
     program: 'Certificate in Community Health, 2023',
     text: 'The community health program is well-structured and practically oriented. My clinical placements were invaluable. I passed my licensing exam on the first attempt and got posted immediately. Highly recommend St Johns.',
     rating: 5,
     initials: 'FH',
+    image: '/images/fatuma.png',
+    accent: 'var(--green-300)',
   },
   {
-    name: 'Peter Kimani',
+    name: 'Izoo',
     role: 'Electrical Contractor',
+    company: 'Self-employed',
     program: 'Diploma in Electrical Engineering, 2020',
     text: 'The hands-on training at St Johns is unlike any other institution. The workshop facilities are top-notch. I registered my electrical contracting company immediately after graduation and business is thriving.',
     rating: 5,
     initials: 'PK',
+    image: '/images/izoo.png',
+    accent: 'var(--gold-300)',
   },
 ];
 
 export default function Testimonials() {
   const [active, setActive] = useState(0);
-  const [animating, setAnimating] = useState(false);
+  const [direction, setDirection] = useState('next'); // 'next' | 'prev'
+  const [sliding, setSliding] = useState(false);
+  const [displayed, setDisplayed] = useState(0);
+  const timerRef = useRef(null);
 
-  const goTo = (idx) => {
-    if (animating) return;
-    setAnimating(true);
-    setActive(idx);
-    setTimeout(() => setAnimating(false), 400);
+  const goTo = (idx, dir = 'next') => {
+    if (sliding || idx === active) return;
+    setDirection(dir);
+    setSliding(true);
+    setTimeout(() => {
+      setDisplayed(idx);
+      setActive(idx);
+      setSliding(false);
+    }, 420);
   };
 
-  const next = () => goTo((active + 1) % testimonials.length);
-  const prev = () => goTo((active - 1 + testimonials.length) % testimonials.length);
+  const next = () => goTo((active + 1) % testimonials.length, 'next');
+  const prev = () => goTo((active - 1 + testimonials.length) % testimonials.length, 'prev');
+
+  const resetTimer = () => {
+    clearInterval(timerRef.current);
+    timerRef.current = setInterval(() => {
+      setActive(a => {
+        const next = (a + 1) % testimonials.length;
+        setDirection('next');
+        setSliding(true);
+        setTimeout(() => { setDisplayed(next); setSliding(false); }, 420);
+        return next;
+      });
+    }, 6000);
+  };
 
   useEffect(() => {
-    const timer = setInterval(next, 6000);
-    return () => clearInterval(timer);
-  }, [active]);
+    resetTimer();
+    return () => clearInterval(timerRef.current);
+  }, []);
 
-  const t = testimonials[active];
+  const t = testimonials[displayed];
 
   return (
     <section className={`section ${styles.testimonials}`}>
-      <div className={styles.bgDecor} />
-      <div className="container">
-        <div className="section-label" style={{ justifyContent: 'center', display: 'flex', marginBottom: 16 }}>
-          <FiStar size={12} /> Student Testimonials
-        </div>
-        <h2 className="section-title" style={{ textAlign: 'center', color: 'white', marginBottom: 60 }}>
-          What Our <em style={{ color: 'var(--gold-300)', fontStyle: 'italic' }}>Graduates</em> Say
-        </h2>
+      {/* Background orbs */}
+      <div className={styles.orb1} />
+      <div className={styles.orb2} />
+      <div className={styles.orb3} />
 
-        <div className={styles.carousel}>
-          {/* Navigation - left */}
-          <button onClick={prev} className={styles.navBtn} aria-label="Previous">
-            <FiChevronLeft size={20} />
+      <div className={`container ${styles.inner}`}>
+
+        {/* Header */}
+        <div className={styles.header}>
+          <div className={styles.labelRow}>
+            <span className={styles.labelLine} />
+            <span className={styles.labelText}>Student Voices</span>
+            <span className={styles.labelLine} />
+          </div>
+          <h2 className={styles.heading}>
+            What Our <em>Graduates</em> Say
+          </h2>
+        </div>
+
+        {/* Main Stage */}
+        <div className={styles.stage}>
+
+          {/* Prev Button */}
+          <button
+            onClick={() => { prev(); resetTimer(); }}
+            className={styles.navBtn}
+            aria-label="Previous testimonial"
+          >
+            <FiChevronLeft size={22} />
           </button>
 
-          {/* Testimonial Card */}
-          <div className={`${styles.card} ${animating ? styles.cardAnimating : ''}`}>
-            <MdFormatQuote size={52} className={styles.quoteIcon} />
+          {/* Card */}
+          <div
+            className={[
+              styles.card,
+              sliding
+                ? direction === 'next'
+                  ? styles.slideOutLeft
+                  : styles.slideOutRight
+                : styles.slideIn,
+            ].join(' ')}
+          >
+            {/* Image Column */}
+            <div className={styles.imgCol}>
+              <div className={styles.imgFrame}>
+                <Image
+                  src={t.image}
+                  alt={t.name}
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  sizes="(max-width: 768px) 100vw, 380px"
+                />
+                <div className={styles.imgGradient} />
+              </div>
 
-            <div className={styles.stars}>
-              {Array(t.rating).fill(0).map((_, i) => (
-                <FiStar key={i} size={16} className={styles.star} />
-              ))}
+              {/* Name tag over image bottom */}
+              <div className={styles.nameTag}>
+                <span className={styles.nameTagName}>{t.name}</span>
+                <span className={styles.nameTagRole}>{t.role}</span>
+                <span className={styles.nameTagCompany}>{t.company}</span>
+              </div>
+
+              {/* Accent number */}
+              <div className={styles.indexBadge}>
+                <span>{String(active + 1).padStart(2, '0')}</span>
+                <span className={styles.indexTotal}>/ {String(testimonials.length).padStart(2, '0')}</span>
+              </div>
             </div>
 
-            <blockquote className={styles.quote}>{t.text}</blockquote>
+            {/* Quote Column */}
+            <div className={styles.quoteCol}>
+              <div className={styles.quoteMarkLarge}>"</div>
 
-            <div className={styles.author}>
-              <div className={styles.avatar}>{t.initials}</div>
-              <div className={styles.authorInfo}>
-                <div className={styles.authorName}>{t.name}</div>
-                <div className={styles.authorRole}>{t.role}</div>
-                <div className={styles.authorProgram}>{t.program}</div>
+              <div className={styles.stars}>
+                {Array(t.rating).fill(0).map((_, i) => (
+                  <FiStar key={i} size={14} className={styles.star} />
+                ))}
+              </div>
+
+              <blockquote className={styles.quoteText}>
+                {t.text}
+              </blockquote>
+
+              <div className={styles.divider} />
+
+              <div className={styles.programRow}>
+                <span className={styles.programLabel}>Programme</span>
+                <span className={styles.programValue}>{t.program}</span>
               </div>
             </div>
           </div>
 
-          {/* Navigation - right */}
-          <button onClick={next} className={styles.navBtn} aria-label="Next">
-            <FiChevronRight size={20} />
+          {/* Next Button */}
+          <button
+            onClick={() => { next(); resetTimer(); }}
+            className={styles.navBtn}
+            aria-label="Next testimonial"
+          >
+            <FiChevronRight size={22} />
           </button>
         </div>
 
-        {/* Dots */}
-        <div className={styles.dots}>
-          {testimonials.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => goTo(i)}
-              className={`${styles.dot} ${i === active ? styles.dotActive : ''}`}
-            />
-          ))}
+        {/* Dots + Thumbnails row */}
+        <div className={styles.controls}>
+          {/* Progress dots */}
+          <div className={styles.dots}>
+            {testimonials.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => { goTo(i, i > active ? 'next' : 'prev'); resetTimer(); }}
+                className={`${styles.dot} ${i === active ? styles.dotActive : ''}`}
+                aria-label={`Go to testimonial ${i + 1}`}
+              />
+            ))}
+          </div>
         </div>
 
-        {/* Thumbnails */}
-        <div className={styles.thumbnails}>
-          {testimonials.map((t, i) => (
+        {/* Thumbnail strip */}
+        <div className={styles.thumbStrip}>
+          {testimonials.map((item, i) => (
             <button
               key={i}
-              onClick={() => goTo(i)}
+              onClick={() => { goTo(i, i > active ? 'next' : 'prev'); resetTimer(); }}
               className={`${styles.thumb} ${i === active ? styles.thumbActive : ''}`}
             >
-              <div className={styles.thumbAvatar}>{t.initials}</div>
-              <div className={styles.thumbInfo}>
-                <div className={styles.thumbName}>{t.name}</div>
-                <div className={styles.thumbRole}>{t.role.split(' at ')[0]}</div>
+              <div className={styles.thumbImgWrap}>
+                <Image
+                  src={item.image}
+                  alt={item.name}
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  sizes="48px"
+                />
               </div>
+              <div className={styles.thumbText}>
+                <span className={styles.thumbName}>{item.name}</span>
+                <span className={styles.thumbRole}>{item.role}</span>
+              </div>
+              {i === active && <span className={styles.thumbActivePip} />}
             </button>
           ))}
         </div>
+
       </div>
     </section>
   );

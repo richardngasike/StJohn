@@ -1,6 +1,6 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { FiArrowRight, FiCheck } from 'react-icons/fi';
-import { MdOutlineSchool } from 'react-icons/md';
 import styles from './AboutSection.module.css';
 
 const highlights = [
@@ -20,19 +20,32 @@ export default function About() {
           {/* Image Side */}
           <div className={styles.imgSide}>
             <div className={styles.imgMain}>
-              <div className={styles.imgPlaceholder}>
-                <MdOutlineSchool size={64} />
-                <p>St Johns Campus</p>
-                <span>Established 2015</span>
-              </div>
+              <Image
+                src="/images/aboutsection2.png"
+                alt="St Johns Campus"
+                fill
+                style={{ objectFit: 'cover' }}
+                priority
+              />
             </div>
+
+            {/* ISO Card with small icon image */}
             <div className={styles.imgCard}>
-              <div className={styles.imgCardIcon}><MdOutlineSchool size={22} /></div>
+              <div className={styles.imgCardIcon}>
+                <Image
+                  src="/images/logo.png"
+                  alt="ISO 9001:2015 Certified"
+                  width={28}
+                  height={28}
+                />
+              </div>
               <div>
                 <strong>ISO 9001:2015</strong>
                 <span>Quality Management Certified</span>
               </div>
             </div>
+
+            {/* Years badge */}
             <div className={styles.imgBadge}>
               <span className={styles.imgBadgeNum}>11+</span>
               <span className={styles.imgBadgeText}>Years of Excellence</span>
@@ -55,7 +68,6 @@ export default function About() {
               practical training, mentorship, and character development. We partner with industry leaders
               to ensure our programs remain relevant and our graduates are ready for the workforce.
             </p>
-
             <div className={styles.highlights}>
               {highlights.map((h, i) => (
                 <div key={i} className={styles.highlight}>
@@ -64,7 +76,6 @@ export default function About() {
                 </div>
               ))}
             </div>
-
             <div className={styles.actions}>
               <Link href="/about" className="btn btn-primary btn-lg">
                 Learn More <FiArrowRight size={16} />
