@@ -19,7 +19,7 @@ const values = [
 ];
 
 const milestones = [
-  { year: '2010', event: 'College founded with 3 programs and 45 students' },
+  { year: '2015', event: 'College founded with 3 programs and 45 students' },
   { year: '2012', event: 'Received full KNEC accreditation for diploma programs' },
   { year: '2013', event: 'Expanded to new campus with modern laboratories' },
   { year: '2013', event: 'Launched computer science and IT programs' },
@@ -74,7 +74,7 @@ export default function AboutPage() {
               <div className="section-label">Our Story</div>
               <h2 className="section-title">10 Years of <span>Transforming Lives</span></h2>
               <p className={styles.historyLead}>
-                St Johns Training College was established in 2010 with a vision to provide accessible quality education in Samburu. Starting with just three programs and 45 students, we have grown into a premier institution serving over 2,500 students annually.
+                St Johns Training College was established in 2015 with a vision to provide accessible quality education in Samburu. Starting with just three programs and 45 students, we have grown into a premier institution serving over 2,500 students annually.
               </p>
               <p className={styles.historyBody}>
                 Over three decades, we have continuously evolved our programs, expanded our facilities, and deepened our industry partnerships. Our commitment to quality has earned us full accreditation from KNEC, NITA, and TVETA, as well as ISO 9001:2015 certification for quality management.
@@ -144,7 +144,7 @@ export default function AboutPage() {
             Our <em style={{ color: 'var(--gold-300)', fontStyle: 'italic' }}>Accreditations</em>
           </h2>
           <div className={styles.accGrid}>
-            {['KNEC', 'NITA', 'TVETA', 'ISO 9001:2015', 'KASNEB', 'Ministry of Education'].map((a, i) => (
+            {['KNEC', 'NITA', 'TVETA', 'CDACC', 'KASNEB', 'Ministry of Education'].map((a, i) => (
               <div key={i} className={styles.accCard}>
                 <MdOutlineSchool size={28} />
                 <span>{a}</span>

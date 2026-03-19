@@ -4,7 +4,7 @@ import { MdOutlineSchool } from 'react-icons/md';
 import styles from './AboutSection.module.css';
 
 const highlights = [
-  'Fully accredited by KNEC, NITA, and TVETA',
+  'Fully accredited by KNEC, NITA, CDACC and TVETA',
   'Experienced and dedicated faculty members',
   'Modern laboratories and workshop facilities',
   'Strong industry partnerships for internships',
@@ -23,7 +23,7 @@ export default function About() {
               <div className={styles.imgPlaceholder}>
                 <MdOutlineSchool size={64} />
                 <p>St Johns Campus</p>
-                <span>Established 2010</span>
+                <span>Established 2015</span>
               </div>
             </div>
             <div className={styles.imgCard}>
@@ -34,7 +34,7 @@ export default function About() {
               </div>
             </div>
             <div className={styles.imgBadge}>
-              <span className={styles.imgBadgeNum}>30+</span>
+              <span className={styles.imgBadgeNum}>11+</span>
               <span className={styles.imgBadgeText}>Years of Excellence</span>
             </div>
           </div>
@@ -46,7 +46,7 @@ export default function About() {
               A Legacy of <span>Academic Excellence</span> in Kenya
             </h2>
             <p className={styles.lead}>
-              Founded in 2010, St Johns Training College has grown to become one of Kenya's most respected
+              Founded in 2015, St Johns Training College has grown to become one of Kenya's most respected
               technical and vocational training institutions, dedicated to producing competent, ethical,
               and employable graduates.
             </p>

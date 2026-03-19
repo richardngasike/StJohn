@@ -360,7 +360,7 @@ ul, ol {
 .page-header {
   background: linear-gradient(135deg, var(--green-900) 0%, var(--green-700) 60%, var(--brown-700) 100%);
   padding: 120px 0 80px;
-  position: relative;
+  position: covers;
   overflow: hidden;
   margin-top: var(--navbar-height);
 }
@@ -370,7 +370,7 @@ ul, ol {
   position: absolute;
   inset: 0;
   background: url('/images/pattern.svg') repeat;
-  opacity: 0.04;
+  opacity: 0.34;
 }
 
 .page-header-content {

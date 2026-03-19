@@ -104,9 +104,14 @@ export default function Navbar() {
 
           {/* Logo */}
           <Link href="/" className={styles.logo}>
-            <div className={styles.logoIcon}>
-              <MdOutlineSchool size={28} />
-            </div>
+             <img
+                src="/images/logo.png"
+                alt="St Johns Logo"
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  e.target.parentNode.innerHTML = '🤲';
+                }}
+              />
             <div className={styles.logoText}>
               <span className={styles.logoName}>St Johns</span>
               <span className={styles.logoSub}>Training College</span>

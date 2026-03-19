@@ -56,8 +56,9 @@ const slides = [
 ];
 
 const bgImages = [
+  
   '/images/hero.png',
-  '/images/hero2.png',
+  '/images/bg.jpeg',
   '/images/hero3.png',
   '/images/hero4.png',
 ];
@@ -161,7 +162,7 @@ export default function Hero() {
             <div className={styles.quickStat}>
               <FiUsers size={16} />
               <div>
-                <strong>2,500+</strong>
+                <strong>1000+</strong>
                 <span>Students</span>
               </div>
             </div>
@@ -177,7 +178,7 @@ export default function Hero() {
             <div className={styles.quickStat}>
               <FiAward size={16} />
               <div>
-                <strong>30+</strong>
+                <strong>10+</strong>
                 <span>Years</span>
               </div>
             </div>
@@ -191,7 +192,7 @@ export default function Hero() {
             <div className={styles.statValue}>{slide.stat.value}</div>
             <div className={styles.statLabel}>{slide.stat.label}</div>
             <div className={styles.statCardLine} />
-            <p className={styles.statDesc}>St Johns Training College — proudly shaping Kenya's future professionals since 2010.</p>
+            <p className={styles.statDesc}>St Johns Training College - proudly shaping Kenya's future professionals since 2015.</p>
           </div>
         </div>
       </div>

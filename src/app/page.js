@@ -7,7 +7,7 @@ import CTA from '../components/CTA/CTA';
 import About from './about/AboutSection';
 
 export const metadata = {
-  title: 'St Johns Training College | Excellence in Education Since 2010',
+  title: 'St Johns Training College | Excellence in Education Since 2015',
 };
 
 export default function Home() {
