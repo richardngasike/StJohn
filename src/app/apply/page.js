@@ -167,7 +167,7 @@ export default function ApplyPage() {
                 <MdOutlineSchool size={24} />
                 <h4>Need Help?</h4>
                 <p>Contact our admissions office for assistance with your application.</p>
-                <a href="tel:+254700000000">+254 700 000 000</a>
+                <a href="tel:+254720215715">+254 700 000 000</a>
                 <a href="mailto:admissions@stjohnscollege.ac.ke">admissions@stjohnscollege.ac.ke</a>
               </div>
             </div>

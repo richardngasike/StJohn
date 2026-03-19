@@ -78,7 +78,7 @@ export default function ContactPage() {
         <div className="container">
           <div className={styles.infoGrid}>
             {[
-              { icon: FiPhone, title: 'Call Us', lines: ['+254 700 000 000', '+254 711 000 000'], note: 'Mon–Fri, 8am–5pm', color: 'green', href: 'tel:+254700000000' },
+              { icon: FiPhone, title: 'Call Us', lines: ['+254 700 000 000', '+254 711 000 000'], note: 'Mon–Fri, 8am–5pm', color: 'green', href: 'tel:+254720215715' },
               { icon: FiMail, title: 'Email Us', lines: ['info@stjohnscollege.ac.ke', 'admissions@stjohnscollege.ac.ke'], note: 'We reply within 24 hours', color: 'gold', href: 'mailto:info@stjohnscollege.ac.ke' },
               { icon: FiMapPin, title: 'Visit Us', lines: ['Cereal Board Road', 'Samburu, Kenya'], note: 'P.O. Box 00100', color: 'brown', href: '#map' },
               { icon: FiClock, title: 'Office Hours', lines: ['Mon–Fri: 8:00am – 5:00pm', 'Sat: 9:00am – 1:00pm'], note: 'Closed Sundays & Public Holidays', color: 'green' },
@@ -214,7 +214,7 @@ export default function ContactPage() {
               <div className="section-label">FAQ</div>
               <h2 className="section-title">Frequently Asked <span>Questions</span></h2>
               <p className="section-subtitle">Can't find your answer? Contact our admissions team directly.</p>
-              <a href="tel:+254700000000" className="btn btn-primary" style={{ marginTop: 24 }}>
+              <a href="tel:+254720215715" className="btn btn-primary" style={{ marginTop: 24 }}>
                 <FiPhone size={15} /> Call Us Now
               </a>
             </div>

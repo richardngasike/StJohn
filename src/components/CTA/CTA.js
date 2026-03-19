@@ -24,7 +24,7 @@ export default function CTA() {
             <Link href="/apply" className={styles.btnPrimary}>
               Apply Online Now <FiArrowRight size={18} />
             </Link>
-            <a href="tel:+254700000000" className={styles.btnSecondary}>
+            <a href="tel:+254720215715" className={styles.btnSecondary}>
               <FiPhone size={16} /> Call Admissions
             </a>
           </div>
