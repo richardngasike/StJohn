@@ -12,18 +12,58 @@ import styles from './programs.module.css';
 const categories = ['All', 'Certificate', 'Diploma', 'Short Course'];
 
 const allPrograms = [
-  { icon: MdOutlineComputer,       level: 'Diploma',      cat: 'Diploma',      title: 'Information Technology',          duration: '2 Years', intake: 'Sept & Jan', fee: 'KES 45,000/yr', students: 340, desc: 'Programming, networking, cybersecurity, database management and cloud computing.', id: 'it' },
-  { icon: MdOutlineBusinessCenter, level: 'Diploma',      cat: 'Diploma',      title: 'Business Administration',         duration: '2 Years', intake: 'Sept & Jan', fee: 'KES 42,000/yr', students: 280, desc: 'Management, entrepreneurship, marketing, human resources and organizational behavior.', id: 'business' },
-  { icon: MdOutlineHealthAndSafety,level: 'Certificate',  cat: 'Certificate',  title: 'Community Health',                duration: '18 Months', intake: 'Sept',  fee: 'KES 38,000/yr', students: 210, desc: 'Public health, clinical care, community outreach and health promotion strategies.', id: 'health' },
-  { icon: MdOutlineEngineering,    level: 'Diploma',      cat: 'Diploma',      title: 'Electrical Engineering',          duration: '2 Years', intake: 'Sept',    fee: 'KES 50,000/yr', students: 175, desc: 'Electrical installation, renewable energy systems, instrumentation and power distribution.', id: 'electrical' },
-  { icon: MdOutlineAccountBalance, level: 'Certificate',  cat: 'Certificate',  title: 'Accounting & Finance',            duration: '1 Year',  intake: 'Sept & Jan', fee: 'KES 35,000/yr', students: 295, desc: 'Bookkeeping, financial reporting, tax compliance, QuickBooks and accounting software.', id: 'accounting' },
-  { icon: MdOutlineSchool,         level: 'Certificate',  cat: 'Certificate',  title: 'Early Childhood Education',       duration: '1 Year',  intake: 'Sept',    fee: 'KES 32,000/yr', students: 190, desc: 'Child development, pedagogy, early literacy, numeracy and classroom management.', id: 'ece' },
-  { icon: MdOutlineAgriculture,    level: 'Certificate',  cat: 'Certificate',  title: 'Agriculture & Food Technology',   duration: '1 Year',  intake: 'Sept',    fee: 'KES 30,000/yr', students: 120, desc: 'Crop production, agribusiness, food processing and modern farming technologies.', id: 'agri' },
-  { icon: MdOutlineConstruction,   level: 'Diploma',      cat: 'Diploma',      title: 'Building Technology',             duration: '2 Years', intake: 'Sept',    fee: 'KES 48,000/yr', students: 145, desc: 'Construction management, quantity surveying, architectural drafting and project management.', id: 'building' },
-  { icon: MdOutlineComputer,       level: 'Short Course', cat: 'Short Course', title: 'Digital Marketing',               duration: '3 Months',intake: 'Monthly', fee: 'KES 15,000',   students: 85,  desc: 'SEO, social media marketing, email campaigns, analytics and content strategy.', id: 'digital' },
-  { icon: MdOutlineBusinessCenter, level: 'Short Course', cat: 'Short Course', title: 'Entrepreneurship & Startup',      duration: '2 Months',intake: 'Monthly', fee: 'KES 12,000',   students: 95,  desc: 'Business planning, fundraising, market research and lean startup methodology.', id: 'startup' },
-  { icon: MdOutlineHealthAndSafety,level: 'Certificate',  cat: 'Certificate',  title: 'Pharmacy Technician',             duration: '2 Years', intake: 'Sept',    fee: 'KES 55,000/yr', students: 130, desc: 'Pharmaceutical dispensing, drug interactions, healthcare regulation and patient care.', id: 'pharmacy' },
-  { icon: MdOutlineEngineering,    level: 'Short Course', cat: 'Short Course', title: 'Plumbing & Water Technology',     duration: '6 Months',intake: 'Sept & Jan', fee: 'KES 22,000', students: 75, desc: 'Pipe fitting, water supply systems, sanitation and drainage technology.', id: 'plumbing' },
+  // ================= DIPLOMA COURSES =================
+  { title: 'Diploma in Information Technology', level: 'Diploma', cat: 'KNEC', duration: '2-3 Years' },
+  { title: 'Diploma in Business Management', level: 'Diploma', cat: 'KNEC', duration: '2 Years' },
+  { title: 'Diploma in Supply Chain Management', level: 'Diploma', cat: 'KNEC', duration: '2 Years' },
+  { title: 'Diploma in Human Resource Management', level: 'Diploma', cat: 'KNEC', duration: '2 Years' },
+  { title: 'Diploma in Electrical & Electronics Engineering', level: 'Diploma', cat: 'KNEC', duration: '3 Years' },
+  { title: 'Diploma in Civil Engineering', level: 'Diploma', cat: 'KNEC', duration: '3 Years' },
+  { title: 'Diploma in Mechanical Engineering', level: 'Diploma', cat: 'KNEC', duration: '3 Years' },
+  { title: 'Diploma in Hospitality Management', level: 'Diploma', cat: 'KNEC', duration: '2 Years' },
+  { title: 'Diploma in Tourism Management', level: 'Diploma', cat: 'KNEC', duration: '2 Years' },
+  { title: 'Diploma in Journalism & Mass Communication', level: 'Diploma', cat: 'KNEC', duration: '2 Years' },
+  { title: 'Diploma in Early Childhood Development Education (ECDE)', level: 'Diploma', cat: 'KNEC', duration: '2 Years' },
+
+  // ================= CERTIFICATE COURSES =================
+  { title: 'Certificate in Information Technology', level: 'Certificate', cat: 'KNEC', duration: '1-2 Years' },
+  { title: 'Certificate in Business Administration', level: 'Certificate', cat: 'KNEC', duration: '1 Year' },
+  { title: 'Certificate in Electrical Installation', level: 'Certificate', cat: 'KNEC', duration: '1-2 Years' },
+  { title: 'Certificate in Plumbing', level: 'Certificate', cat: 'KNEC', duration: '1 Year' },
+  { title: 'Certificate in Automotive Engineering', level: 'Certificate', cat: 'KNEC', duration: '1-2 Years' },
+  { title: 'Certificate in Catering & Accommodation', level: 'Certificate', cat: 'KNEC', duration: '1 Year' },
+  { title: 'Certificate in Community Health', level: 'Certificate', cat: 'KNEC', duration: '1 Year' },
+
+  // ================= ARTISAN COURSES =================
+  { title: 'Artisan in Masonry', level: 'Artisan', cat: 'TVET', duration: '6-12 Months' },
+  { title: 'Artisan in Plumbing', level: 'Artisan', cat: 'TVET', duration: '6-12 Months' },
+  { title: 'Artisan in Hairdressing & Beauty Therapy', level: 'Artisan', cat: 'TVET', duration: '6 Months' },
+  { title: 'Artisan in Welding & Fabrication', level: 'Artisan', cat: 'TVET', duration: '6-12 Months' },
+  { title: 'Artisan in Carpentry & Joinery', level: 'Artisan', cat: 'TVET', duration: '6-12 Months' },
+
+  // ================= CDACC (CBET COURSES) =================
+  { title: 'ICT Technician (CBET Level 5)', level: 'CBET', cat: 'CDACC', duration: '1-2 Years' },
+  { title: 'Electrical Technician (CBET Level 5)', level: 'CBET', cat: 'CDACC', duration: '1-2 Years' },
+  { title: 'Food & Beverage Service (CBET)', level: 'CBET', cat: 'CDACC', duration: '6-12 Months' },
+  { title: 'Fashion Design & Garment Making (CBET)', level: 'CBET', cat: 'CDACC', duration: '6-12 Months' },
+  { title: 'Building Construction Technician (CBET)', level: 'CBET', cat: 'CDACC', duration: '1 Year' },
+
+  // ================= PROFESSIONAL COURSES =================
+  { title: 'Certified Public Accountant (CPA)', level: 'Professional', cat: 'KASNEB', duration: '2-3 Years' },
+  { title: 'Certified Human Resource Professional (CHRP)', level: 'Professional', cat: 'IHRM', duration: '1-2 Years' },
+  { title: 'Certified Digital Marketer', level: 'Professional', cat: 'Private', duration: '3 Months' },
+
+  // ================= SHORT COURSES =================
+  { title: 'Computer Packages', level: 'Short Course', cat: 'Short', duration: '1-3 Months' },
+  { title: 'Graphic Design', level: 'Short Course', cat: 'Short', duration: '3 Months' },
+  { title: 'Web Development', level: 'Short Course', cat: 'Short', duration: '3-6 Months' },
+  { title: 'Cyber Security Basics', level: 'Short Course', cat: 'Short', duration: '2 Months' },
+  { title: 'Digital Marketing', level: 'Short Course', cat: 'Short', duration: '3 Months' },
+
+  // ================= DRIVING COURSES =================
+  { title: 'Driving Class B (Light Vehicles)', level: 'Driving', cat: 'NTSA', duration: '1 Month' },
+  { title: 'Driving Class C (Commercial Vehicles)', level: 'Driving', cat: 'NTSA', duration: '1-2 Months' },
+  { title: 'Motorcycle Riding (Class A)', level: 'Driving', cat: 'NTSA', duration: '2-4 Weeks' },
 ];
 
 const colorMap = {
