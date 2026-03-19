@@ -50,9 +50,9 @@ const socials = [
 
 const stats = [
   { value: '11+',  label: 'Years of Excellence' },
-  { value: '2,000+', label: 'Graduates' },
+  { value: '1,000+', label: 'Graduates' },
   { value: '15+',  label: 'Programmes' },
-  { value: '90%',  label: 'Employment Rate' },
+  { value: '98%',  label: 'Employment Rate' },
 ];
 
 export default function Footer() {
@@ -194,16 +194,16 @@ export default function Footer() {
                   <div className={styles.contactIcon}><FiPhone size={13} /></div>
                   <div>
                     <p className={styles.contactLabel}>Phone</p>
-                    <p className={styles.contactValue}>+254 700 000 000</p>
-                    <p className={styles.contactValue}>+254 711 000 000</p>
+                    <p className={styles.contactValue}>+2547 20 215 715</p>
+                    <p className={styles.contactValue}>+2547 20 215 715</p>
                   </div>
                 </a>
-                <a href="mailto:info@stjohnscollege.ac.ke" className={styles.contactItem}>
+                <a href="mailto:stjohnstrainingcolle@gmail.com" className={styles.contactItem}>
                   <div className={styles.contactIcon}><FiMail size={13} /></div>
                   <div>
                     <p className={styles.contactLabel}>Email</p>
-                    <p className={styles.contactValue}>info@stjohnscollege.ac.ke</p>
-                    <p className={styles.contactValue}>admissions@stjohnscollege.ac.ke</p>
+                    <p className={styles.contactValue}>stjohnstrainingcollege@gmail.com</p>
+                    <p className={styles.contactValue}>stjohnstrainingcollege@gmail.com</p>
                   </div>
                 </a>
                 <div className={styles.contactItem}>

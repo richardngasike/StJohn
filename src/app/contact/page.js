@@ -21,7 +21,7 @@ const departments = [
 ];
 
 const faqs = [
-  { q: 'What are the minimum entry requirements?', a: 'For certificate programs, you need KCSE grade C- or above. For diploma programs, C+ or above. Some programs have specific subject requirements. Contact admissions for details.' },
+  { q: 'What are the minimum entry requirements?', a: 'For certificate programs, you need KCSE grade D or above. For diploma programs, C- or above. Some programs have specific subject requirements. Contact admissions for details.' },
   { q: 'How long does the application process take?', a: 'Once you submit a complete application, our admissions team reviews it within 3–5 business days and sends you a decision via email and SMS.' },
   { q: 'Do you offer scholarships or financial aid?', a: 'Yes. We offer merit-based scholarships, HELB loans for eligible students, and payment plans. Visit our admissions office or contact us for details on current opportunities.' },
   { q: 'Can I apply for multiple programs?', a: 'Yes, you can indicate preferred alternative programs in your application. However, you will be admitted to only one program per intake.' },
@@ -78,8 +78,8 @@ export default function ContactPage() {
         <div className="container">
           <div className={styles.infoGrid}>
             {[
-              { icon: FiPhone, title: 'Call Us', lines: ['+254 700 000 000', '+254 711 000 000'], note: 'Mon–Fri, 8am–5pm', color: 'green', href: 'tel:+254720215715' },
-              { icon: FiMail, title: 'Email Us', lines: ['info@stjohnscollege.ac.ke', 'admissions@stjohnscollege.ac.ke'], note: 'We reply within 24 hours', color: 'gold', href: 'mailto:info@stjohnscollege.ac.ke' },
+              { icon: FiPhone, title: 'Call Us', lines: ['+254 720 215 715', '+254 720 215 715'], note: 'Mon–Fri, 8am–5pm', color: 'green', href: 'tel:+254720215715' },
+              { icon: FiMail, title: 'Email Us', lines: ['stjohnstrainingcollege@gmail.com', 'stjohnstrainingcollege@gmail.com'], note: 'We reply within 24 hours', color: 'gold', href: 'mailto:stjohnstrainingcollege@gmail.com' },
               { icon: FiMapPin, title: 'Visit Us', lines: ['Cereal Board Road', 'Samburu, Kenya'], note: 'P.O. Box 00100', color: 'brown', href: '#map' },
               { icon: FiClock, title: 'Office Hours', lines: ['Mon–Fri: 8:00am – 5:00pm', 'Sat: 9:00am – 1:00pm'], note: 'Closed Sundays & Public Holidays', color: 'green' },
             ].map((c, i) => (
@@ -190,15 +190,15 @@ export default function ContactPage() {
                 <h4>Emergency Contacts</h4>
                 <div className={styles.emergencyItem}>
                   <span>Security</span>
-                  <a href="tel:+254700000001">+254 700 000 001</a>
+                  <a href="tel:+254700000001">+254 720 215 715</a>
                 </div>
                 <div className={styles.emergencyItem}>
                   <span>Student Affairs</span>
-                  <a href="tel:+254700000002">+254 700 000 002</a>
+                  <a href="tel:+254700000002">+254 720 215 715</a>
                 </div>
                 <div className={styles.emergencyItem}>
                   <span>Medical / First Aid</span>
-                  <a href="tel:+254700000003">+254 700 000 003</a>
+                  <a href="tel:+254700000003">+254 720 215 715</a>
                 </div>
               </div>
             </div>
