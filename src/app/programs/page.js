@@ -5,11 +5,11 @@ import { FiClock, FiUsers, FiBook, FiAward, FiArrowRight, FiSearch } from 'react
 import {
   MdOutlineComputer, MdOutlineBusinessCenter, MdOutlineHealthAndSafety,
   MdOutlineEngineering, MdOutlineAccountBalance, MdOutlineSchool,
-  MdOutlineAgriculture, MdOutlineConstruction
+  MdOutlineAgriculture, MdOutlineConstruction, MdOutlineDirectionsCar
 } from 'react-icons/md';
 import styles from './programs.module.css';
 
-const categories = ['All', 'Certificate', 'Diploma', 'Short Course'];
+const categories = ['All', 'Certificate', 'Diploma', 'Short Course', 'Artisan', 'CBET', 'Professional', 'Driving'];
 
 const allPrograms = [
   // ================= DIPLOMA COURSES =================
@@ -41,7 +41,7 @@ const allPrograms = [
   { title: 'Artisan in Welding & Fabrication', level: 'Artisan', cat: 'TVET', duration: '6-12 Months' },
   { title: 'Artisan in Carpentry & Joinery', level: 'Artisan', cat: 'TVET', duration: '6-12 Months' },
 
-  // ================= CDACC (CBET COURSES) =================
+  // ================= CBET COURSES =================
   { title: 'ICT Technician (CBET Level 5)', level: 'CBET', cat: 'CDACC', duration: '1-2 Years' },
   { title: 'Electrical Technician (CBET Level 5)', level: 'CBET', cat: 'CDACC', duration: '1-2 Years' },
   { title: 'Food & Beverage Service (CBET)', level: 'CBET', cat: 'CDACC', duration: '6-12 Months' },
@@ -67,9 +67,23 @@ const allPrograms = [
 ];
 
 const colorMap = {
-  Diploma:      { bg: 'var(--green-100)',  color: 'var(--green-700)' },
-  Certificate:  { bg: 'var(--gold-100)',   color: 'var(--gold-700)' },
-  'Short Course':{ bg: 'var(--brown-100)', color: 'var(--brown-700)' },
+  Diploma: { bg: 'var(--green-100)', color: 'var(--green-700)' },
+  Certificate: { bg: 'var(--gold-100)', color: 'var(--gold-700)' },
+  'Short Course': { bg: 'var(--brown-100)', color: 'var(--brown-700)' },
+  Artisan: { bg: 'var(--blue-100)', color: 'var(--blue-700)' },
+  CBET: { bg: 'var(--purple-100)', color: 'var(--purple-700)' },
+  Professional: { bg: 'var(--pink-100)', color: 'var(--pink-700)' },
+  Driving: { bg: 'var(--orange-100)', color: 'var(--orange-700)' },
+};
+
+const iconMap = {
+  Diploma: MdOutlineSchool,
+  Certificate: MdOutlineSchool,
+  'Short Course': MdOutlineComputer,
+  Artisan: MdOutlineConstruction,
+  CBET: MdOutlineEngineering,
+  Professional: MdOutlineBusinessCenter,
+  Driving: MdOutlineDirectionsCar,
 };
 
 export default function ProgramsPage() {
@@ -77,7 +91,7 @@ export default function ProgramsPage() {
   const [search, setSearch] = useState('');
 
   const filtered = allPrograms.filter(p => {
-    const matchCat = activeCategory === 'All' || p.cat === activeCategory;
+    const matchCat = activeCategory === 'All' || p.level === activeCategory;
     const matchSearch = p.title.toLowerCase().includes(search.toLowerCase());
     return matchCat && matchSearch;
   });
@@ -98,7 +112,6 @@ export default function ProgramsPage() {
 
       <section className="section">
         <div className="container">
-          {/* Filters */}
           <div className={styles.filters}>
             <div className={styles.filterTabs}>
               {categories.map(cat => (
@@ -109,7 +122,7 @@ export default function ProgramsPage() {
                 >
                   {cat}
                   <span className={styles.filterCount}>
-                    {cat === 'All' ? allPrograms.length : allPrograms.filter(p => p.cat === cat).length}
+                    {cat === 'All' ? allPrograms.length : allPrograms.filter(p => p.level === cat).length}
                   </span>
                 </button>
               ))}
@@ -126,22 +139,23 @@ export default function ProgramsPage() {
             </div>
           </div>
 
-          {/* Grid */}
           <div className={styles.grid}>
             {filtered.map((p, i) => {
-              const c = colorMap[p.cat];
+              const c = colorMap[p.level] || { bg: '#eee', color: '#333' };
+              const Icon = iconMap[p.level] || MdOutlineSchool;
+
               return (
-                <div key={i} className={styles.card} id={p.id}>
+                <div key={i} className={styles.card}>
                   <div className={styles.cardHead}>
                     <div className={styles.cardIcon} style={{ background: c.bg }}>
-                      <p.icon size={28} style={{ color: c.color }} />
+                      <Icon size={28} style={{ color: c.color }} />
                     </div>
                     <span className={`badge`} style={{ background: c.bg, color: c.color }}>
                       {p.level}
                     </span>
                   </div>
                   <h3 className={styles.cardTitle}>{p.title}</h3>
-                  <p className={styles.cardDesc}>{p.desc}</p>
+                  <p className={styles.cardDesc}>{p.desc || 'No description available'}</p>
                   <div className={styles.cardMeta}>
                     <div className={styles.metaItem}>
                       <FiClock size={13} />
@@ -149,15 +163,15 @@ export default function ProgramsPage() {
                     </div>
                     <div className={styles.metaItem}>
                       <FiBook size={13} />
-                      <span><strong>Intake:</strong> {p.intake}</span>
+                      <span><strong>Intake:</strong> {p.intake || 'N/A'}</span>
                     </div>
                     <div className={styles.metaItem}>
                       <FiAward size={13} />
-                      <span><strong>Fee:</strong> {p.fee}</span>
+                      <span><strong>Fee:</strong> {p.fee || 'N/A'}</span>
                     </div>
                     <div className={styles.metaItem}>
                       <FiUsers size={13} />
-                      <span><strong>Enrolled:</strong> {p.students}</span>
+                      <span><strong>Enrolled:</strong> {p.students || 'N/A'}</span>
                     </div>
                   </div>
                   <Link href="/apply" className={styles.cardBtn}>
