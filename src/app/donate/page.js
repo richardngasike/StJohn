@@ -61,7 +61,7 @@ const CAUSES = [
     description:
       'Support our overall scholarship pool, which the college allocates each term to the most deserving students across all causes — FGM survivors, child marriage survivors, orphans, and youth from extremely low-income households.',
     impact: 'Every dollar makes a direct difference',
-    stats: '400+ total beneficiaries across all programs',
+    stats: '100+ total beneficiaries across all programs',
   },
 ];
 
@@ -206,7 +206,7 @@ export default function DonatePage() {
                 <div className={styles.heroBadge}>
                   <FiHeart size={16} />
                   <div>
-                    <strong>400+ Lives Changed</strong>
+                    <strong>100+ Lives Changed</strong>
                     <span>through your generosity</span>
                   </div>
                 </div>

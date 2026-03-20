@@ -57,6 +57,18 @@
       "static/chunks/main-app.js",
       "static/css/app/donate/page.css",
       "static/chunks/app/donate/page.js"
+    ],
+    "/admin/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/admin/page.css",
+      "static/chunks/app/admin/page.js"
+    ],
+    "/portal/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/portal/page.css",
+      "static/chunks/app/portal/page.js"
     ]
   }
 }
