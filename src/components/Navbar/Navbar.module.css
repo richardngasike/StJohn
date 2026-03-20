@@ -57,6 +57,30 @@
   flex-shrink: 0;
 }
 
+/* ── Top bar: Donate pill ── */
+.topDonate {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-decoration: none;
+  background: rgba(239, 68, 68, 0.18);
+  color: #fca5a5;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  transition: all 0.2s;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.topDonate:hover {
+  background: rgba(239, 68, 68, 0.32);
+  color: #fff;
+  border-color: rgba(239, 68, 68, 0.5);
+}
+
 .topApply {
   background: var(--gold-500);
   color: var(--brown-900);
@@ -163,8 +187,8 @@
 
 .navTransparent .logoName { color: white; }
 .navTransparent .logoSub  { color: rgba(255,255,255,0.65); }
-.navSolid .logoName { color: var(--green-900); }
-.navSolid .logoSub  { color: var(--text-light); }
+.navSolid .logoName       { color: var(--green-900); }
+.navSolid .logoSub        { color: var(--text-light); }
 
 /* ─── Desktop nav links ─── */
 .navLinks {
@@ -207,6 +231,33 @@
 .navTransparent .navLinkOpen    { color: white; background: rgba(255,255,255,0.12); }
 .navSolid .navLinkOpen          { color: var(--green-700); background: var(--green-50); }
 
+/* ── Desktop nav: Donate link ── */
+.navLinkDonate {
+  color: #ef4444 !important;
+  font-weight: 700 !important;
+}
+
+.navTransparent .navLinkDonate        { color: #fca5a5 !important; }
+.navTransparent .navLinkDonate:hover  { color: #fff !important; background: rgba(239,68,68,0.15) !important; }
+.navSolid .navLinkDonate              { color: #ef4444 !important; }
+.navSolid .navLinkDonate:hover        { color: #dc2626 !important; background: #fff5f5 !important; }
+
+.navTransparent .navLinkDonate.navLinkActive { color: #fff !important; background: rgba(239,68,68,0.2) !important; }
+.navSolid .navLinkDonate.navLinkActive       { color: #dc2626 !important; background: #fff5f5 !important; }
+
+.donateHeart {
+  flex-shrink: 0;
+  animation: heartbeat 1.8s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  15%       { transform: scale(1.28); }
+  30%       { transform: scale(1); }
+  45%       { transform: scale(1.16); }
+  60%       { transform: scale(1); }
+}
+
 .chevron {
   transition: transform 0.25s ease;
   opacity: 0.65;
@@ -221,7 +272,7 @@
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  padding-top: 8px;          /* bridge height — mouse travels through this */
+  padding-top: 8px;
   pointer-events: none;
   opacity: 0;
   visibility: hidden;
@@ -235,7 +286,6 @@
   visibility: visible;
 }
 
-/* Invisible fill so mouse doesn't leave hitbox between link and panel */
 .dropdownBridge {
   position: absolute;
   top: 0;
@@ -309,9 +359,7 @@
   border: 1.5px solid transparent;
 }
 
-.navBtnOutline {
-  border-color: currentColor;
-}
+.navBtnOutline { border-color: currentColor; }
 
 .navTransparent .navBtnOutline       { color: rgba(255,255,255,0.88); }
 .navTransparent .navBtnOutline:hover { background: rgba(255,255,255,0.12); color: white; }
@@ -416,6 +464,19 @@
 
 .userDropdownItem:hover { background: var(--green-50); color: var(--green-700); }
 
+/* ── User dropdown: Donate item ── */
+.userDropdownDonate {
+  color: #ef4444 !important;
+  font-weight: 600 !important;
+}
+
+.userDropdownDonate:hover {
+  background: #fff5f5 !important;
+  color: #dc2626 !important;
+}
+
+.userDropdownDonate svg { color: #ef4444 !important; }
+
 .userDropdownLogout {
   display: flex;
   align-items: center;
@@ -496,7 +557,6 @@
   transform: translateX(0);
 }
 
-/* Background image */
 .sidebarBg {
   position: absolute;
   inset: 0;
@@ -506,7 +566,6 @@
   z-index: 0;
 }
 
-/* Dark overlay so text stays readable */
 .sidebarOverlay {
   position: absolute;
   inset: 0;
@@ -519,7 +578,6 @@
   z-index: 1;
 }
 
-/* All sidebar content above overlay */
 .sidebarContent {
   position: relative;
   z-index: 2;
@@ -635,8 +693,6 @@
   color: var(--gold-300) !important;
 }
 
-.sidebarLinkParent {}
-
 .sidebarChevron {
   transition: transform 0.25s ease;
   opacity: 0.6;
@@ -648,7 +704,7 @@
   opacity: 1;
 }
 
-/* Sub links accordion */
+/* Sub-links accordion */
 .sidebarSub {
   display: flex;
   flex-direction: column;
@@ -687,6 +743,34 @@
 .sidebarSubLink svg { flex-shrink: 0; opacity: 0.5; }
 .sidebarSubLink:hover svg { opacity: 1; }
 
+/* ── Sidebar nav: Donate link ── */
+.sidebarLinkDonate {
+  justify-content: flex-start !important;
+  gap: 10px;
+  color: #fca5a5 !important;
+  background: rgba(239, 68, 68, 0.12) !important;
+  border: 1px solid rgba(239, 68, 68, 0.25) !important;
+  border-radius: 10px !important;
+  font-weight: 700 !important;
+  margin-top: 6px;
+}
+
+.sidebarLinkDonate:hover {
+  background: rgba(239, 68, 68, 0.22) !important;
+  color: #fff !important;
+  border-color: rgba(239, 68, 68, 0.4) !important;
+}
+
+.sidebarLinkDonateActive {
+  background: rgba(239, 68, 68, 0.28) !important;
+  color: #fff !important;
+}
+
+.sidebarDonateHeart {
+  flex-shrink: 0;
+  animation: heartbeat 1.8s ease-in-out infinite;
+}
+
 /* ─── Sidebar Contact ─── */
 .sidebarContact {
   padding: 14px 16px;
@@ -709,7 +793,7 @@
 }
 
 .sidebarContactItem:hover { color: rgba(255,255,255,0.85); }
-.sidebarContactItem svg { color: var(--gold-400); flex-shrink: 0; }
+.sidebarContactItem svg   { color: var(--gold-400); flex-shrink: 0; }
 
 /* ─── Sidebar CTA Buttons ─── */
 .sidebarCTA {
@@ -763,6 +847,30 @@
   transform: translateY(-1px);
 }
 
+/* ── Sidebar CTA: Donate button ── */
+.sidebarBtnDonate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 20px;
+  border-radius: 9px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  border: none;
+  transition: all 0.2s;
+  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.35);
+}
+
+.sidebarBtnDonate:hover {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  box-shadow: 0 6px 18px rgba(239, 68, 68, 0.45);
+  transform: translateY(-1px);
+}
+
 /* ─── Sidebar Accreditation Badges ─── */
 .sidebarBadges {
   padding: 0 16px 20px;
@@ -790,9 +898,9 @@
 
 /* Show hamburger and hide desktop nav at 1024px */
 @media (max-width: 1024px) {
-  .navLinks   { display: none; }
-  .navRight   { display: none; }
-  .userMenu   { display: none; }
+  .navLinks     { display: none; }
+  .navRight     { display: none; }
+  .userMenu     { display: none; }
   .mobileToggle { display: flex; }
 }
 
@@ -801,7 +909,7 @@
   .topContact .topContactItem:nth-child(3) { display: none; }
 }
 
-/* At 600px hide the entire top bar — navbar moves to top:0 */
+/* At 600px hide top bar — navbar moves to top: 0 */
 @media (max-width: 600px) {
   .topBar  { display: none; }
   .navbar  { top: 0; }

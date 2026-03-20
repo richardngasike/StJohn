@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import {
   FiMenu, FiX, FiChevronDown, FiPhone, FiMail,
   FiUser, FiLogOut, FiSettings, FiFileText, FiArrowRight,
+  FiHeart,
 } from 'react-icons/fi';
 import { MdOutlineLocationOn } from 'react-icons/md';
 import styles from './Navbar.module.css';
@@ -15,19 +16,19 @@ const navLinks = [
   {
     label: 'About Us', href: '/about',
     children: [
-      { label: 'Our History',    href: '/about#history' },
+      { label: 'Our History',      href: '/about#history' },
       { label: 'Mission & Vision', href: '/about#mission' },
-      { label: 'Leadership',     href: '/about#leadership' },
-      { label: 'Accreditation',  href: '/about#accreditation' },
+      { label: 'Leadership',       href: '/about#leadership' },
+      { label: 'Accreditation',    href: '/about#accreditation' },
     ],
   },
   {
     label: 'Academics', href: '/programs',
     children: [
-      { label: 'All Programs',       href: '/programs' },
+      { label: 'All Programs',        href: '/programs' },
       { label: 'Certificate Courses', href: '/programs#certificate' },
-      { label: 'Diploma Courses',    href: '/programs#diploma' },
-      { label: 'Short Courses',      href: '/programs#short' },
+      { label: 'Diploma Courses',     href: '/programs#diploma' },
+      { label: 'Short Courses',       href: '/programs#short' },
     ],
   },
   { label: 'News & Events', href: '/news' },
@@ -35,17 +36,17 @@ const navLinks = [
 ];
 
 export default function Navbar() {
-  const [scrolled,      setScrolled]      = useState(false);
-  const [mobileOpen,    setMobileOpen]    = useState(false);
-  const [openDropdown,  setOpenDropdown]  = useState(null);
+  const [scrolled,       setScrolled]       = useState(false);
+  const [mobileOpen,     setMobileOpen]     = useState(false);
+  const [openDropdown,   setOpenDropdown]   = useState(null);
   const [mobileExpanded, setMobileExpanded] = useState({});
-  const [user,          setUser]          = useState(null);
-  const [userMenuOpen,  setUserMenuOpen]  = useState(false);
+  const [user,           setUser]           = useState(null);
+  const [userMenuOpen,   setUserMenuOpen]   = useState(false);
 
-  const pathname     = usePathname();
-  const leaveTimers  = useRef({});   // per-item leave timers
-  const userMenuRef  = useRef(null);
-  const isHome       = pathname === '/';
+  const pathname    = usePathname();
+  const leaveTimers = useRef({});
+  const userMenuRef = useRef(null);
+  const isHome      = pathname === '/';
 
   /* ── scroll ── */
   useEffect(() => {
@@ -94,7 +95,7 @@ export default function Navbar() {
   const handleLeave = useCallback((label) => {
     leaveTimers.current[label] = setTimeout(() => {
       setOpenDropdown((cur) => (cur === label ? null : cur));
-    }, 220);           // 220 ms grace — plenty of time to reach the dropdown
+    }, 220);
   }, []);
 
   const handleDropdownEnter = useCallback((label) => {
@@ -137,6 +138,9 @@ export default function Navbar() {
             </span>
           </div>
           <div className={styles.topActions}>
+            <Link href="/donate" className={styles.topDonate}>
+              <FiHeart size={11} /> Donate
+            </Link>
             <Link href="/apply"  className={styles.topApply}>Apply Now</Link>
             <Link href="/portal" className={styles.topPortal}>Student Portal</Link>
           </div>
@@ -191,14 +195,13 @@ export default function Navbar() {
                   )}
                 </Link>
 
-                {/* Dropdown — bridge div prevents gap-triggered close */}
+                {/* Dropdown */}
                 {link.children && (
                   <div
                     className={[styles.dropdownWrap, openDropdown === link.label ? styles.dropdownVisible : ''].join(' ')}
                     onMouseEnter={() => handleDropdownEnter(link.label)}
                     onMouseLeave={() => handleDropdownLeave(link.label)}
                   >
-                    {/* invisible bridge so mouse can travel from link to panel */}
                     <div className={styles.dropdownBridge} />
                     <div className={styles.dropdown}>
                       {link.children.map((child) => (
@@ -212,6 +215,21 @@ export default function Navbar() {
                 )}
               </li>
             ))}
+
+            {/* Donate — standalone highlighted link in desktop nav */}
+            <li className={styles.navItem}>
+              <Link
+                href="/donate"
+                className={[
+                  styles.navLink,
+                  styles.navLinkDonate,
+                  pathname === '/donate' ? styles.navLinkActive : '',
+                ].join(' ')}
+              >
+                <FiHeart size={13} className={styles.donateHeart} />
+                Donate
+              </Link>
+            </li>
           </ul>
 
           {/* Desktop right actions */}
@@ -227,8 +245,13 @@ export default function Navbar() {
                     {user.first_name?.[0]}{user.last_name?.[0]}
                   </div>
                   <span className={styles.userName}>{user.first_name}</span>
-                  <FiChevronDown size={13} className={userMenuOpen ? styles.chevronOpen : ''} style={{ transition: 'transform .2s' }} />
+                  <FiChevronDown
+                    size={13}
+                    className={userMenuOpen ? styles.chevronOpen : ''}
+                    style={{ transition: 'transform .2s' }}
+                  />
                 </button>
+
                 {userMenuOpen && (
                   <div className={styles.userDropdown}>
                     <div className={styles.userDropdownHeader}>
@@ -246,6 +269,10 @@ export default function Navbar() {
                     </Link>
                     <Link href="/portal/applications" className={styles.userDropdownItem}>
                       <FiFileText size={14} /> My Applications
+                    </Link>
+                    <div className={styles.userDropdownDivider} />
+                    <Link href="/donate" className={`${styles.userDropdownItem} ${styles.userDropdownDonate}`}>
+                      <FiHeart size={14} /> Donate / Support a Student
                     </Link>
                     <div className={styles.userDropdownDivider} />
                     <button onClick={handleLogout} className={styles.userDropdownLogout}>
@@ -289,11 +316,9 @@ export default function Navbar() {
       {/* Drawer */}
       <aside className={[styles.sidebar, mobileOpen ? styles.sidebarOpen : ''].join(' ')} aria-hidden={!mobileOpen}>
 
-        {/* Background image layer */}
         <div className={styles.sidebarBg} />
         <div className={styles.sidebarOverlay} />
 
-        {/* Content */}
         <div className={styles.sidebarContent}>
 
           {/* Header */}
@@ -333,7 +358,10 @@ export default function Navbar() {
                       {link.label}
                       <FiChevronDown
                         size={15}
-                        className={[styles.sidebarChevron, mobileExpanded[link.label] ? styles.sidebarChevronOpen : ''].join(' ')}
+                        className={[
+                          styles.sidebarChevron,
+                          mobileExpanded[link.label] ? styles.sidebarChevronOpen : '',
+                        ].join(' ')}
                       />
                     </button>
                     <div className={[styles.sidebarSub, mobileExpanded[link.label] ? styles.sidebarSubOpen : ''].join(' ')}>
@@ -353,7 +381,10 @@ export default function Navbar() {
                 ) : (
                   <Link
                     href={link.href}
-                    className={[styles.sidebarLink, pathname === link.href ? styles.sidebarLinkActive : ''].join(' ')}
+                    className={[
+                      styles.sidebarLink,
+                      pathname === link.href ? styles.sidebarLinkActive : '',
+                    ].join(' ')}
                     onClick={() => setMobileOpen(false)}
                   >
                     {link.label}
@@ -361,6 +392,22 @@ export default function Navbar() {
                 )}
               </div>
             ))}
+
+            {/* Donate — highlighted entry in mobile sidebar nav */}
+            <div className={styles.sidebarGroup}>
+              <Link
+                href="/donate"
+                className={[
+                  styles.sidebarLink,
+                  styles.sidebarLinkDonate,
+                  pathname === '/donate' ? styles.sidebarLinkDonateActive : '',
+                ].join(' ')}
+                onClick={() => setMobileOpen(false)}
+              >
+                <FiHeart size={15} className={styles.sidebarDonateHeart} />
+                Donate — Support a Student
+              </Link>
+            </div>
           </nav>
 
           {/* Contact strip */}
@@ -380,6 +427,10 @@ export default function Navbar() {
             </Link>
             <Link href="/apply" className={styles.sidebarBtnFilled} onClick={() => setMobileOpen(false)}>
               Apply Now <FiArrowRight size={14} />
+            </Link>
+            {/* Donate CTA button in sidebar */}
+            <Link href="/donate" className={styles.sidebarBtnDonate} onClick={() => setMobileOpen(false)}>
+              <FiHeart size={14} /> Donate Now
             </Link>
           </div>
 
