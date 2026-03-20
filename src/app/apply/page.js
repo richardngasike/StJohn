@@ -167,7 +167,7 @@ export default function ApplyPage() {
                 <MdOutlineSchool size={24} />
                 <h4>Need Help?</h4>
                 <p>Contact our admissions office for assistance with your application.</p>
-                <a href="tel:+254720215715">+254 700 000 000</a>
+                <a href="tel:+254720215715">+254 720 215 715</a>
                 <a href="mailto:admissions@stjohnscollege.ac.ke">admissions@stjohnscollege.ac.ke</a>
               </div>
             </div>
@@ -186,19 +186,19 @@ export default function ApplyPage() {
                     <div className={styles.formRow}>
                       <div className="form-group">
                         <label className="form-label">First Name <span className="required">*</span></label>
-                        <input className={`form-input ${errors.firstName ? 'error' : ''}`} value={form.firstName} onChange={e => update('firstName', e.target.value)} placeholder="John" />
+                        <input className={`form-input ${errors.firstName ? 'error' : ''}`} value={form.firstName} onChange={e => update('firstName', e.target.value)} placeholder="Richard" />
                         {errors.firstName && <p className="form-error">{errors.firstName}</p>}
                       </div>
                       <div className="form-group">
                         <label className="form-label">Last Name <span className="required">*</span></label>
-                        <input className={`form-input ${errors.lastName ? 'error' : ''}`} value={form.lastName} onChange={e => update('lastName', e.target.value)} placeholder="Doe" />
+                        <input className={`form-input ${errors.lastName ? 'error' : ''}`} value={form.lastName} onChange={e => update('lastName', e.target.value)} placeholder="Ngasike" />
                         {errors.lastName && <p className="form-error">{errors.lastName}</p>}
                       </div>
                     </div>
                     <div className={styles.formRow}>
                       <div className="form-group">
                         <label className="form-label">Email Address <span className="required">*</span></label>
-                        <input type="email" className={`form-input ${errors.email ? 'error' : ''}`} value={form.email} onChange={e => update('email', e.target.value)} placeholder="john@example.com" />
+                        <input type="email" className={`form-input ${errors.email ? 'error' : ''}`} value={form.email} onChange={e => update('email', e.target.value)} placeholder="richard@example.com" />
                         {errors.email && <p className="form-error">{errors.email}</p>}
                       </div>
                       <div className="form-group">

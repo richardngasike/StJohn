@@ -51,7 +51,7 @@ const socials = [
 const stats = [
   { value: '11+',  label: 'Years of Excellence' },
   { value: '1,000+', label: 'Graduates' },
-  { value: '15+',  label: 'Programmes' },
+  { value: '40+',  label: 'Programmes' },
   { value: '98%',  label: 'Employment Rate' },
 ];
 
@@ -62,7 +62,7 @@ export default function Footer() {
       {/* Background image layer */}
       <div className={styles.bgImage}>
         <Image
-          src="/images/aboutsection.png"
+          src="/images/aboutsection2.png"
           alt=""
           fill
           style={{ objectFit: 'cover' }}
@@ -112,7 +112,6 @@ export default function Footer() {
                 <span className={styles.accBadge}>NITA</span>
                 <span className={styles.accBadge}>TVETA</span>
                 <span className={styles.accBadge}>CDACC</span>
-                <span className={styles.accBadge}>ISO 9001:2015</span>
               </div>
 
               <div className={styles.officeHours}>

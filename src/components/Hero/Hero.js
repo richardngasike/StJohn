@@ -56,11 +56,11 @@ const slides = [
 ];
 
 const bgImages = [
-  
+  '/images/aboutsection.png',
   '/images/hero.png',
   '/images/bg.jpeg',
   '/images/hero3.png',
-  '/images/aboutsection2.png',
+
 ];
 
 export default function Hero() {

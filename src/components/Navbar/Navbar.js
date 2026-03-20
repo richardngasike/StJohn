@@ -126,8 +126,8 @@ export default function Navbar() {
       <div className={`${styles.topBar} ${transparent ? styles.topBarTransparent : styles.topBarSolid}`}>
         <div className={`container ${styles.topBarInner}`}>
           <div className={styles.topContact}>
-            <a href="tel:+254700000000" className={styles.topContactItem}>
-              <FiPhone size={11} /> +254 700 000 000
+            <a href="tel:+254720215715" className={styles.topContactItem}>
+              <FiPhone size={11} /> +254 720 215 715
             </a>
             <a href="mailto:info@stjohnscollege.ac.ke" className={styles.topContactItem}>
               <FiMail size={11} /> info@stjohnscollege.ac.ke
