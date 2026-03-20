@@ -21,7 +21,7 @@ export default function About() {
           <div className={styles.imgSide}>
             <div className={styles.imgMain}>
               <Image
-                src="/images/aboutsection2.png"
+                src="/images/aboutsection.jpg"
                 alt="St Johns Campus"
                 fill
                 style={{ objectFit: 'cover' }}

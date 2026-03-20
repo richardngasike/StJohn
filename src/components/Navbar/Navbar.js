@@ -130,8 +130,8 @@ export default function Navbar() {
             <a href="tel:+254720215715" className={styles.topContactItem}>
               <FiPhone size={11} /> +254 720 215 715
             </a>
-            <a href="mailto:info@stjohnscollege.ac.ke" className={styles.topContactItem}>
-              <FiMail size={11} /> info@stjohnscollege.ac.ke
+            <a href="mailto:stjohnstrainingcollege@gmail.com" className={styles.topContactItem}>
+              <FiMail size={11} /> stjohnstrainingcollege@gmail.com
             </a>
             <span className={styles.topContactItem}>
               <MdOutlineLocationOn size={12} /> Maralal, Samburu County
@@ -415,7 +415,7 @@ export default function Navbar() {
             <a href="tel:+254720215715" className={styles.sidebarContactItem}>
               <FiPhone size={13} /> +254 720 215 715
             </a>
-            <a href="mailto:info@stjohnscollege.ac.ke" className={styles.sidebarContactItem}>
+            <a href="mailto:stjohnstrainingcollege@gmail.com" className={styles.sidebarContactItem}>
               <FiMail size={13} /> stjohnstrainingcollege@gmail.com
             </a>
           </div>
