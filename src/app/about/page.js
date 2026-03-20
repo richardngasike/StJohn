@@ -5,10 +5,10 @@ import styles from './about.module.css';
 export const metadata = { title: 'About Us' };
 
 const leadership = [
-  { name: 'Dr Leornanrd Mambo', role: 'Principal', desc: 'PhD in Education Management, 20+ years in academia' },
-  { name: 'Prof. Lempapa', role: 'Deputy Principal Academics', desc: 'PhD Education Policy, Former KNEC examiner' },
-  { name: 'Mr. Lesilele', role: 'Registrar', desc: 'MBA, 15+ years in institutional management' },
-  { name: 'Dr. Sarah', role: 'Dean of Students', desc: 'PhD Counseling Psychology, Student welfare expert' },
+  { name: 'Dr Leornanrd Mambo', role: 'Director', desc: '20+ years in academia' },
+  { name: 'Prof. Lempapa', role: 'Principal', desc: 'Overall school principal' },
+  { name: 'Napunyu', role: 'Secretary', desc: 'School Secretary with 5+ years of experience' },
+  { name: 'Mr Fabian', role: 'Accountant', desc: 'Bsc In Accounting' },
 ];
 
 const values = [
@@ -25,7 +25,7 @@ const milestones = [
   { year: '2013', event: 'Launched computer science and IT programs' },
   { year: '2018', event: 'Achieved ISO 9001:2015 Quality Management certification' },
   { year: '2021', event: 'Launched online student portal and digital learning platform' },
-  { year: '2026', event: '30 years of excellence — 15,000+ graduates across East Africa' },
+  { year: '2026', event: '10 years of excellence — 15,000+ graduates across East Africa' },
 ];
 
 export default function AboutPage() {
