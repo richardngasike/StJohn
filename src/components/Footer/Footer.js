@@ -62,7 +62,7 @@ export default function Footer() {
       {/* Background image layer */}
       <div className={styles.bgImage}>
         <Image
-          src="/images/aboutsection2.png"
+          src="/images/hero6.png"
           alt=""
           fill
           style={{ objectFit: 'cover' }}
