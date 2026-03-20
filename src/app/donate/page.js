@@ -71,8 +71,8 @@ const BANK = {
   bank: 'KCB Bank',
   swift: 'KCBLKENX',
   account: '1204223807',
-  beneficiary: 'St Johns Training College Foundation',
-  branch: 'Nairobi Branch',
+  beneficiary: 'St Johns Training College',
+  branch: 'Maralal Branch',
 };
 
 const FAQS = [
