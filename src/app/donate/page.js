@@ -28,7 +28,7 @@ const CAUSES = [
     description:
       'Many girls in our program were rescued from Female Genital Mutilation — a harmful traditional practice that robs girls of their health, dignity, and future. Your donation funds their education, trauma counselling, and safe accommodation so they can heal and thrive.',
     impact: 'KES 15,000 sponsors one girl for a full term',
-    stats: '84 girls supported since 2018',
+    stats: '84 girls supported since 2015',
   },
   {
     id: 'early-marriage',
@@ -174,7 +174,7 @@ export default function DonatePage() {
               <div className={styles.heroStats}>
                 {[
                   { Icon: FiUsers,                   value: '100+',  label: 'Students Supported' },
-                  { Icon: MdOutlineVolunteerActivism, value: '11 yrs', label: 'Running Since 2018' },
+                  { Icon: MdOutlineVolunteerActivism, value: '11 yrs', label: 'Running Since 2015' },
                   { Icon: FiHeart,                   value: '100%',  label: 'Goes to Students' },
                 ].map((s, i) => (
                   <div key={i} className={styles.heroStat}>
