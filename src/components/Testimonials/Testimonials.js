@@ -24,7 +24,7 @@ const testimonials = [
     text: 'The health records course i did at St johns is very outstdaning compared to other.',
     rating: 5,
     initials: 'DO',
-    image: '/images/selina.png',
+    image: '/images/jemimanatumi.jpeg',
     accent: 'var(--gold-400)',
   },
   {
