@@ -6,14 +6,14 @@ import styles from './Testimonials.module.css';
 
 const testimonials = [
   {
-    name: 'Richard Ngasike',
+    name: 'Andrew Lekupe',
     role: 'IT Professional',
     company: 'Samburu County',
     program: 'Diploma in Information Technology, 2022',
     text: 'St Johns gave me not just technical knowledge but the confidence to compete in the job market. I secured my job at Safaricom three months after graduation. The lecturers are dedicated and the facilities are excellent.',
     rating: 5,
     initials: 'GW',
-    image: '/images/richard.jpg',
+    image: '/images/lekupe.jpeg',
     accent: 'var(--green-400)',
   },
   {
