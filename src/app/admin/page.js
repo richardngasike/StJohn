@@ -9,7 +9,7 @@ import {
 import { MdOutlineSchool } from 'react-icons/md';
 import toast from 'react-hot-toast';
 import Cookies from 'js-cookie';
-import styles from './admin.module.css';
+
 
 const ADMIN_EMAIL    = 'admin@stjohnscollege.ac.ke';
 const ADMIN_PASSWORD = 'Admin@2026';
