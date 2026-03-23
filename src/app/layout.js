@@ -7,7 +7,7 @@ export const metadata = {
   metadataBase: new URL('https://stjohnscollege.ac.ke'),
 
   title: {
-    default: 'St Johns Training College Maralal | Best College in Samburu County',
+    default: 'St Johns Training College Maralal | Leading College in Samburu County',
     template: '%s | St Johns Training College',
   },
 
