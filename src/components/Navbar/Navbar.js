@@ -226,7 +226,7 @@ export default function Navbar() {
                   pathname === '/donate' ? styles.navLinkActive : '',
                 ].join(' ')}
               >
-                <FiHeart size={13} className={styles.donateHeart} />
+                <FiHeart size={26} className={styles.donateHeart} />
                 Donate
               </Link>
             </li>
@@ -272,7 +272,7 @@ export default function Navbar() {
                     </Link>
                     <div className={styles.userDropdownDivider} />
                     <Link href="/donate" className={`${styles.userDropdownItem} ${styles.userDropdownDonate}`}>
-                      <FiHeart size={14} /> Donate / Support a Student
+                      <FiHeart size={40} /> Donate / Support a Student
                     </Link>
                     <div className={styles.userDropdownDivider} />
                     <button onClick={handleLogout} className={styles.userDropdownLogout}>
