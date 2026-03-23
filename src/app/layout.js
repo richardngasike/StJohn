@@ -27,7 +27,7 @@ keywords: [
   'Saint Johns Samburu',
   'St Johns Maralal',
   'stjohnscollege.ac.ke',
-
+   'St Johns Training College Maralal',
   // Location-based keywords
   'colleges in Samburu County',
   'colleges in Maralal',
