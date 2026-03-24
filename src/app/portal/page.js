@@ -10,7 +10,7 @@ import {
 import { MdOutlineSchool } from 'react-icons/md';
 import toast from 'react-hot-toast';
 import Cookies from 'js-cookie';
-import styles from './admin.module.css';
+import styles from './page.module.css';
 
 const statusConfig = {
   pending:      { label: 'Pending',      color: '#92400e', bg: '#fef3c7', icon: FiClock },
