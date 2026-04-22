@@ -8,18 +8,61 @@ import styles from './apply.module.css';
 const steps = ['Personal Info', 'Academic Background', 'Program Selection', 'Documents', 'Review & Submit'];
 
 const programs = [
-  'Diploma in Information Technology',
-  'Diploma in Business Administration',
-  'Diploma in Electrical Engineering',
-  'Diploma in Building Technology',
-  'Certificate in Community Health',
-  'Certificate in Accounting & Finance',
-  'Certificate in Early Childhood Education',
-  'Certificate in Agriculture & Food Technology',
-  'Certificate in Pharmacy Technician',
-  'Short Course: Digital Marketing',
-  'Short Course: Entrepreneurship & Startup',
-  'Short Course: Plumbing & Water Technology',
+  // CERTIFICATE COURSES
+  'Certificate in Community Development and Social Work',
+  'Certificate in Hair Dressing and Beauty Therapy',
+  'Certificate in Business Administration and Management',
+  'Certificate in Human Resource Management',
+  'Certificate in Secretarial Studies',
+  'Certificate in Information Communication Technology',
+  'Certificate in Nutrition and Dietetics',
+  'Certificate in Community Health Assistant',
+  'Certificate in Health Records and IT',
+  'Certificate in Front Office',
+  'Certificate in Tourism Management',
+  'Certificate in General Agriculture',
+  'Certificate in Food Production & Catering',
+  'Certificate in Counseling Psychology',
+  'Certificate in Supply Chain',
+  'Certificate in Finance and Banking',
+  'Certificate in Tour Guide',
+  'Certificate in Store Keeping',
+  'Certificate in Health Support Service / Nurse Assistant',
+
+  // DIPLOMA COURSES
+  'Diploma in Community Development and Social Work',
+  'Diploma in Human Resource Management',
+  'Diploma in Business Administration and Management',
+  'Diploma in Information Communication Technology',
+  'Diploma in Nutrition and Dietetics',
+  'Diploma in Community Health Assistant',
+  'Diploma in Health Records and IT',
+  'Diploma in Secretarial Studies',
+  'Diploma in Teacher Education (Primary & ECDE)',
+  'Diploma in Secondary Teacher Education',
+  'Diploma in General Agriculture',
+  'Diploma in Counseling Psychology',
+  'Diploma in Food Production & Catering',
+  'Diploma in Supply Chain',
+  'Diploma in Finance and Banking',
+  'Diploma in Tour Guide',
+  'Diploma in Health Support Services',
+
+  // TECHNICAL COURSES (SHORT COURSES)
+  'Short Course: Plumbing and Pipe Fitting',
+  'Short Course: Tailoring and Dress Making',
+  'Short Course: Electrical Installation',
+  'Short Course: Solar Installation',
+  'Short Course: Interior Design Decorations',
+  'Short Course: Masonry Construction',
+  'Short Course: Mobile Repair',
+  'Short Course: Motor Cycle Repair',
+  'Short Course: Mechanical Engineering',
+  'Short Course: Electrical Wireman',
+  'Short Course: Welding and Fabrication',
+
+  // DRIVING SCHOOL
+  'Short Course: Professional Driving Training'
 ];
 
 const initialForm = {

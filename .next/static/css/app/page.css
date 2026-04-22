@@ -468,11 +468,11 @@
 /* ── Title ────────────────────────────────────────────────── */
 .Hero_title__bGj6o {
   font-family: var(--font-display, 'Playfair Display', 'Georgia', serif);
-  font-size: clamp(2.4rem, 5.2vw, 4.4rem);
+  font-size: clamp(0.4rem, 3.2vw, 3.0rem);
   font-weight: 800;
   color: #fff;
   line-height: 1.06;
-  margin: 0 0 26px;
+  margin: 0 0 22px;
   display: flex;
   flex-direction: column;
   gap: 2px;
@@ -496,11 +496,11 @@
 
 /* ── Subtitle ─────────────────────────────────────────────── */
 .Hero_subtitle___gKKT {
-  font-size: clamp(0.95rem, 1.6vw, 1.13rem);
+  font-size: clamp(0.95rem, 1.6vw, 0.93rem);
   color: rgba(255, 255, 255, 0.80);
   line-height: 1.78;
   max-width: 580px;
-  margin: 0 0 22px;
+  margin: 0 0 12px;
   animation: Hero_fadeSlideUp__n07qc 0.6s 0.28s ease both;
 }
 

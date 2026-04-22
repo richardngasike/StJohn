@@ -1,0 +1,288 @@
+/*!******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/app/contact/contact.module.css ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************/
+.contact_infoSection__MaY7X {
+  padding: 0;
+  margin-top: -48px;
+  position: relative;
+  z-index: 10;
+}
+
+.contact_infoGrid__xSJk_ {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 16px;
+  gap: 16px;
+  padding: 0 0 0;
+}
+
+.contact_infoCard__9XwbY {
+  background: white;
+  border-radius: 16px;
+  padding: 28px 22px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-light);
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact_infoCard__9XwbY:hover { transform: translateY(-4px); }
+
+.contact_infoCard_green__1G9r9:hover { border-color: var(--green-300); }
+.contact_infoCard_gold__NX83U:hover  { border-color: var(--gold-300); }
+.contact_infoCard_brown__UT6gw:hover { border-color: var(--brown-300); }
+
+.contact_infoCardIcon__dSoZ2 {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.contact_infoCard_green__1G9r9 .contact_infoCardIcon__dSoZ2 { background: var(--green-100); color: var(--green-700); }
+.contact_infoCard_gold__NX83U  .contact_infoCardIcon__dSoZ2 { background: var(--gold-100);  color: var(--gold-700); }
+.contact_infoCard_brown__UT6gw .contact_infoCardIcon__dSoZ2 { background: var(--brown-100); color: var(--brown-700); }
+
+.contact_infoCard__9XwbY h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--green-900);
+  margin-bottom: 4px;
+}
+
+.contact_infoCard__9XwbY p {
+  font-size: 0.86rem;
+  color: var(--text-medium);
+  line-height: 1.5;
+}
+
+.contact_infoCard__9XwbY span {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* Main Grid */
+.contact_mainGrid__0ktjX {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  grid-gap: 40px;
+  gap: 40px;
+  align-items: start;
+}
+
+/* Form */
+.contact_formWrap__OkXLy {
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.contact_formHeader__cLjJh {
+  background: var(--green-50);
+  border-bottom: 1px solid var(--green-100);
+  padding: 28px 32px;
+}
+
+.contact_formHeader__cLjJh h2 { font-size: 1.5rem; margin-bottom: 6px; }
+.contact_formHeader__cLjJh p  { color: var(--text-light); font-size: 0.9rem; }
+
+.contact_form___aGjp {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contact_formRow__bPMyT { display: grid; grid-template-columns: 1fr 1fr; grid-gap: 20px; gap: 20px; }
+
+.contact_inputWrap___61v3 { position: relative; }
+
+.contact_inputIcon__P464N {
+  position: absolute;
+  left: 12px;
+  top: 13px;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.contact_textareaIcon__iqE7i { top: 14px; }
+
+/* Map Side */
+.contact_mapSide__6_EI8 { display: flex; flex-direction: column; gap: 20px; }
+
+.contact_mapBox__MoTZg {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.contact_mapPlaceholder__dKkiY {
+  height: 260px;
+  background: linear-gradient(135deg, var(--green-800), var(--green-700));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.7);
+  gap: 8px;
+  text-align: center;
+  padding: 20px;
+}
+
+.contact_mapPlaceholder__dKkiY h4 { color: white; font-size: 1.1rem; }
+.contact_mapPlaceholder__dKkiY p  { font-size: 0.88rem; }
+
+/* Social */
+.contact_socialCard__K1xqp {
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: var(--shadow-sm);
+}
+
+.contact_socialCard__K1xqp h4 { font-size: 1rem; color: var(--green-900); margin-bottom: 6px; }
+.contact_socialCard__K1xqp p  { font-size: 0.83rem; color: var(--text-muted); margin-bottom: 16px; }
+
+.contact_socials____oL_ { display: flex; flex-direction: column; gap: 8px; }
+
+.contact_socialBtn__1oT2o {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 14px;
+  border-radius: 8px;
+  background: var(--green-50);
+  color: var(--text-medium);
+  text-decoration: none;
+  font-size: 0.86rem;
+  font-weight: 500;
+  border: 1px solid var(--border-light);
+  transition: all 0.2s;
+}
+
+.contact_socialBtn__1oT2o:hover {
+  background: var(--sc, var(--green-600));
+  color: white;
+  border-color: transparent;
+}
+
+/* Emergency */
+.contact_emergencyCard__q4woL {
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: var(--shadow-sm);
+}
+
+.contact_emergencyCard__q4woL h4 { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 14px; }
+
+.contact_emergencyItem__7RDrn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 0.86rem;
+}
+
+.contact_emergencyItem__7RDrn:last-child { border-bottom: none; }
+.contact_emergencyItem__7RDrn span { color: var(--text-medium); }
+.contact_emergencyItem__7RDrn a { color: var(--green-700); font-weight: 700; text-decoration: none; }
+.contact_emergencyItem__7RDrn a:hover { text-decoration: underline; }
+
+/* FAQ */
+.contact_faqSection__bRqUT { background: var(--off-white); }
+
+.contact_faqInner__AnwcJ {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  grid-gap: 60px;
+  gap: 60px;
+  align-items: start;
+}
+
+.contact_faqLeft__b_217 { position: -webkit-sticky; position: sticky; top: 120px; }
+
+.contact_faqList__nMnox { display: flex; flex-direction: column; gap: 0; }
+
+.contact_faqItem__hJkG6 {
+  border-bottom: 1px solid var(--border-light);
+  overflow: hidden;
+}
+
+.contact_faqItem__hJkG6:first-child { border-top: 1px solid var(--border-light); }
+
+.contact_faqQ__zlCBL {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  transition: color 0.2s;
+}
+
+.contact_faqQ__zlCBL:hover { color: var(--green-700); }
+.contact_faqItemOpen__YHjgA .contact_faqQ__zlCBL { color: var(--green-700); }
+
+.contact_faqChevron__1wv4q {
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  color: var(--text-muted);
+}
+
+.contact_faqItemOpen__YHjgA .contact_faqChevron__1wv4q { transform: rotate(180deg); color: var(--green-600); }
+
+.contact_faqA__jBjgn {
+  padding: 0 0 18px;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  line-height: 1.75;
+  animation: contact_fadeIn__wz7ff 0.25s ease;
+}
+
+@keyframes contact_fadeIn__wz7ff {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .contact_mainGrid__0ktjX { grid-template-columns: 1fr; }
+  .contact_mapSide__6_EI8 { display: grid; grid-template-columns: 1fr 1fr; grid-gap: 16px; gap: 16px; }
+  .contact_mapBox__MoTZg  { grid-column: span 2; }
+}
+
+@media (max-width: 900px) {
+  .contact_infoGrid__xSJk_ { grid-template-columns: repeat(2, 1fr); }
+  .contact_faqInner__AnwcJ { grid-template-columns: 1fr; }
+  .contact_faqLeft__b_217  { position: static; }
+}
+
+@media (max-width: 640px) {
+  .contact_infoGrid__xSJk_ { grid-template-columns: 1fr; }
+  .contact_formRow__bPMyT  { grid-template-columns: 1fr; }
+  .contact_mapSide__6_EI8  { display: flex; flex-direction: column; }
+  .contact_form___aGjp     { padding: 20px; }
+  .contact_formHeader__cLjJh { padding: 20px; }
+}
+

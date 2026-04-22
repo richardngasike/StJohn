@@ -38,7 +38,7 @@ export default function AboutPage() {
               <a href="/">Home</a><span className="sep">/</span><span>About Us</span>
             </div>
             <h1>About St Johns Training College</h1>
-            <p>Three decades of shaping Kenya's future professionals with quality education and values.</p>
+            <p>One decade of shaping Kenya's future professionals with quality education and values.</p>
           </div>
         </div>
       </div>

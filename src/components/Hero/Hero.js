@@ -15,7 +15,6 @@ import styles from './Hero.module.css';
 const slides = [
   {
     id: 1,
-    tag: 'Academic Excellence',
     title: "St. John's\nTraining College",
     subtitle:
       'Providing world-class teacher training that prepares graduates for professional success and national service in Kenya.',
@@ -27,7 +26,6 @@ const slides = [
   },
   {
     id: 2,
-    tag: '2026 Admissions Open',
     title: 'Your Future Starts\nHere Today',
     subtitle:
       "Join thousands of successful graduates who began their journey at St. John's. Applications for the new academic year are now open.",
@@ -39,7 +37,6 @@ const slides = [
   },
   {
     id: 3,
-    tag: 'Holistic Development',
     title: 'Beyond Academics:\nGrow, Lead, Thrive',
     subtitle:
       'State-of-the-art facilities, mentorship, sports, and extracurricular activities that shape well-rounded educators.',
@@ -51,7 +48,6 @@ const slides = [
   },
   {
     id: 4,
-    tag: 'Industry Partnerships',
     title: 'Connecting Education\nWith Industry',
     subtitle:
       'Strong partnerships ensure relevant curriculum, premium internships, and excellent career prospects for our graduates.',
@@ -138,11 +134,6 @@ export default function Hero() {
       {/* Main Content */}
       <div className={`container ${styles.content}`}>
         <div className={styles.contentLeft}>
-          {/* Tag */}
-          <div className={styles.tag} key={`tag-${active}`}>
-            <MdOutlineSchool size={16} />
-            <span>{slide.tag}</span>
-          </div>
 
           {/* Title */}
           <h1 className={styles.title} key={`title-${active}`}>
