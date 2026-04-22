@@ -64,7 +64,7 @@ const slides = [
 ];
 
 const bgImages = [
-  '/images/hero9.png',
+  '/images/hero11.png',
   '/images/hero2.png',
   '/images/hero10.png',
   '/images/bg.jpeg',
