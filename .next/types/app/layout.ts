@@ -1,4 +1,4 @@
-// File: /home/raven/Desktop/websites/stjohns/StJohn-main/src/app/layout.js
+// File: C:\Users\Raven\Desktop\Projects\StJohn\src\app\layout.js
 import * as entry from '../../../src/app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
