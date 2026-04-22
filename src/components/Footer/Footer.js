@@ -270,7 +270,14 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
+      <div style={{ textAlign: "center", marginTop: "20px", position: "relative", zIndex: 10 }}>
+  <Link href="https://richardngasike.co.ke" target="_blank">
+  Developed by
+    <span style={{ cursor: "pointer", color: "#ff0000" }}>
+      Richard Ngasike
+    </span>
+  </Link>
+</div>
     </footer>
   );
 }
