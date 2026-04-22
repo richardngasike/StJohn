@@ -270,7 +270,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div style={{ textAlign: "center", marginTop: "20px", position: "relative", zIndex: 10 }}>
+      <div style={{ textAlign: "center", marginTop: "20px", position: "relative", zIndex: 10, fontSize: "10px"}}>
   <Link href="https://richardngasike.co.ke" target="_blank">
   Developed by
     <span style={{ cursor: "pointer", color: "#ff0000" }}>
