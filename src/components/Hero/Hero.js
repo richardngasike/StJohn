@@ -33,7 +33,7 @@ const slides = [
     cta2: { label: 'Learn More', href: '/about' },
     bg: 'slide2',
     accent: 'Deadline: August 30, 2026',
-    stat: { value: '1,000+', label: 'Students Enrolled' },
+    stat: { value: '500+', label: 'Students Enrolled' },
   },
   {
     id: 3,
@@ -55,7 +55,7 @@ const slides = [
     cta2: { label: 'Contact Us', href: '/contact' },
     bg: 'slide4',
     accent: '50+ Industry Partners',
-    stat: { value: '30+', label: 'Years of Excellence' },
+    stat: { value: '10+', label: 'Years of Excellence' },
   },
 ];
 
@@ -183,7 +183,7 @@ export default function Hero() {
             <div className={styles.quickStat}>
               <FiUsers size={18} />
               <div>
-                <strong>1,000+</strong>
+                <strong>500+</strong>
                 <span>Students</span>
               </div>
             </div>
@@ -199,7 +199,7 @@ export default function Hero() {
             <div className={styles.quickStat}>
               <FiAward size={18} />
               <div>
-                <strong>30+</strong>
+                <strong>10+</strong>
                 <span>Years</span>
               </div>
             </div>
