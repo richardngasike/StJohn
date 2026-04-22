@@ -7,102 +7,119 @@ export const metadata = {
   metadataBase: new URL('https://stjohnscollege.ac.ke'),
 
   title: {
-    default: 'St Johns Training College Maralal | Leading College in Samburu County',
+    default:
+      'St Johns Training College Maralal | Leading TVET College in Samburu County, Kenya',
     template: '%s | St Johns Training College',
   },
 
   description:
-    'St Johns Training College Maralal is a leading TVET college in Samburu County, Kenya offering diploma, certificate, and artisan courses in ICT, business, engineering, health, and more. Apply today and build your future.',
+    'St Johns Training College Maralal is a leading TVET college in Samburu County, Kenya offering diploma, certificate, artisan, CBET, professional and short courses in ICT, business, engineering, health, agriculture and more. Apply online today and join a top accredited college in Northern Kenya.',
 
-keywords: [
-  // Brand keywords
-  'St Johns Training College',
-  'St Johns Teachers Training College',
-  'St Johns College Maralal',
-  'St Johns Samburu',
-  'St Johns College',
-  'St Johns Training College Kenya',
-  'St Johns College Samburu County',
-  'Saint Johns Training College',
-  'Saint Johns Samburu',
-  'St Johns Maralal',
-  'stjohnscollege.ac.ke',
-   'St Johns Training College Maralal',
-  // Location-based keywords
-  'colleges in Samburu County',
-  'colleges in Maralal',
-  'best college in Maralal',
-  'training colleges in Samburu',
-  'TVET colleges in Samburu',
-  'private colleges in Samburu County',
-  'top colleges in Northern Kenya',
-  'colleges in Kenya',
-  'best colleges in Kenya',
-  'training institutes in Kenya',
+  keywords: [
+    // ================= BRAND =================
+    'St Johns Training College',
+    'St Johns Training College Maralal',
+    'St Johns Teachers Training College',
+    'St Johns College Maralal',
+    'St Johns College',
+    'St Johns Samburu',
+    'St Johns Training College Kenya',
+    'St Johns College Samburu County',
+    'Saint Johns Training College',
+    'Saint Johns Samburu',
+    'St Johns Maralal',
+    'stjohnscollege.ac.ke',
 
-  // Course-related keywords
-  'diploma courses Kenya',
-  'certificate courses Kenya',
-  'artisan courses Kenya',
-  'short courses in Kenya',
-  'college courses in Kenya',
-  'technical courses in Kenya',
-  'professional courses Kenya',
+    // ================= LOCATION =================
+    'colleges in Samburu County',
+    'colleges in Maralal',
+    'best college in Maralal',
+    'training colleges in Samburu',
+    'TVET colleges in Samburu',
+    'TVET colleges in Kenya',
+    'colleges in Kenya',
+    'best colleges in Kenya',
+    'private colleges in Samburu County',
+    'top colleges in Northern Kenya',
+    'training institutes in Kenya',
+    'higher education Kenya',
+    'education in Samburu County',
 
-  // Department keywords
-  'ICT college in Samburu',
-  'computer courses in Kenya',
-  'information technology diploma Kenya',
-  'software development courses Kenya',
-  'business courses Kenya',
-  'business management diploma Kenya',
-  'accounting courses Kenya',
-  'human resource courses Kenya',
-  'engineering courses Kenya',
-  'electrical engineering courses Kenya',
-  'mechanical engineering courses Kenya',
-  'health courses Kenya',
-  'community health courses Kenya',
-  'nursing assistant courses Kenya',
+    // ================= COURSES =================
+    'diploma courses Kenya',
+    'certificate courses Kenya',
+    'artisan courses Kenya',
+    'short courses in Kenya',
+    'college courses in Kenya',
+    'technical courses in Kenya',
+    'professional courses Kenya',
+    'CBET courses Kenya',
 
-  // Education system keywords
-  'TVET colleges in Kenya',
-  'KNEC courses Kenya',
-  'CDACC courses Kenya',
-  'accredited colleges in Kenya',
-  'recognized colleges in Kenya',
-  'government approved colleges Kenya',
+    // ================= ICT / TECH =================
+    'ICT college in Samburu',
+    'computer courses in Kenya',
+    'information technology diploma Kenya',
+    'software development courses Kenya',
+    'cyber security courses Kenya',
+    'digital marketing courses Kenya',
 
-  // Student intent keywords
-  'apply college Kenya',
-  'college admission Kenya',
-  'intake September Kenya college',
-  'January intake colleges Kenya',
-  'college fees in Kenya',
-  'affordable colleges in Kenya',
-  'best courses after KCSE',
-  'courses after form four Kenya',
+    // ================= BUSINESS =================
+    'business courses Kenya',
+    'business management diploma Kenya',
+    'accounting courses Kenya',
+    'human resource courses Kenya',
+    'supply chain management Kenya',
 
-  // Digital / search intent
-  'college website Kenya',
-  'online application college Kenya',
-  'study in Kenya colleges',
-  'education in Samburu County',
-  'higher education Kenya',
-  'training institutions Kenya',
+    // ================= ENGINEERING =================
+    'engineering courses Kenya',
+    'electrical engineering courses Kenya',
+    'mechanical engineering courses Kenya',
+    'civil engineering courses Kenya',
+    'construction courses Kenya',
 
-  // Extra SEO variations
-  'College Samburu',
-  'College Kenya',
-  'best TVET college in Samburu',
-  'top training college Maralal',
-  'learning institutions in Samburu',
-  'education center Maralal',
-  'career training Kenya',
-  'skills training Kenya',
-  'technical training institute Kenya',
-  'vocational training Kenya'
-],
+    // ================= HEALTH =================
+    'health courses Kenya',
+    'community health courses Kenya',
+    'nursing assistant courses Kenya',
+    'nutrition and dietetics Kenya',
+
+    // ================= EDUCATION SYSTEM =================
+    'KNEC courses Kenya',
+    'CDACC courses Kenya',
+    'TVET accredited colleges Kenya',
+    'government approved colleges Kenya',
+    'recognized colleges in Kenya',
+
+    // ================= STUDENT INTENT =================
+    'apply college Kenya',
+    'college admission Kenya',
+    'online application college Kenya',
+    'college fees in Kenya',
+    'affordable colleges in Kenya',
+    'intake September Kenya college',
+    'January intake colleges Kenya',
+    'courses after KCSE Kenya',
+    'form four leavers courses Kenya',
+
+    // ================= DIGITAL SEARCH =================
+    'college website Kenya',
+    'study in Kenya colleges',
+    'career training Kenya',
+    'skills training Kenya',
+    'vocational training Kenya',
+    'technical training institute Kenya',
+
+    // ================= EXTRA SEO VARIATIONS =================
+    'College Samburu',
+    'College Kenya',
+    'best TVET college in Samburu',
+    'top training college Maralal',
+    'learning institutions in Samburu',
+    'education center Maralal',
+    'training center Kenya',
+    'professional training Kenya',
+    'job skills training Kenya'
+  ],
 
   authors: [{ name: 'St Johns Training College' }],
   creator: 'St Johns Training College',
@@ -112,43 +129,66 @@ keywords: [
     canonical: 'https://stjohnscollege.ac.ke',
   },
 
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+  },
+
   openGraph: {
-    title: 'St Johns Training College Maralal | Excellence in Education',
+    title:
+      'St Johns Training College Maralal | Leading TVET College in Kenya',
     description:
-      'Join St Johns Training College in Maralal, Samburu County. Offering top diploma and certificate programs in Kenya.',
+      'Join St Johns Training College in Samburu County, Kenya. Accredited TVET institution offering diploma, certificate, artisan and professional courses.',
     url: 'https://stjohnscollege.ac.ke',
     siteName: 'St Johns Training College',
-    images: [
-      {
-        url: '/images/bg.jpeg',
-        width: 1200,
-        height: 630,
-        alt: 'St Johns Training College Maralal',
-      },
-    ],
     locale: 'en_KE',
     type: 'website',
+    images: [
+      {
+        url: 'https://stjohnscollege.ac.ke/images/bg.jpeg',
+        width: 1200,
+        height: 630,
+        alt: 'St Johns Training College Maralal Campus',
+      },
+    ],
   },
 
   twitter: {
     card: 'summary_large_image',
     title: 'St Johns Training College Maralal',
     description:
-      'Top TVET college in Samburu County offering diploma and certificate courses.',
-    images: ['/images/college-campus.jpg'],
+      'Top TVET college in Samburu County offering diploma, certificate, CBET and artisan courses in Kenya.',
+    images: ['https://stjohnscollege.ac.ke/images/college-campus.jpg'],
   },
 
-  robots: {
-    index: true,
-    follow: true,
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/icon.png', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
   },
+
+  verification: {
+    google: '',
+  },
+
+  category: 'education',
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/images/logo.png" type="image/png" />
+        <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body>

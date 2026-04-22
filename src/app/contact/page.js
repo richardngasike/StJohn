@@ -10,6 +10,42 @@ import {
 import toast from 'react-hot-toast';
 import styles from './contact.module.css';
 
+export const metadata = {
+  title: "Contact St Johns Training College Samburu | Phone, Email & Location",
+  description:
+    "Get in touch with St Johns Training College in Samburu, Kenya. Contact us via phone, email, or visit our campus for admissions, courses, and enquiries.",
+  keywords: [
+    "St Johns Training College contact",
+    "St Johns Samburu contacts",
+    "college contact Samburu Kenya",
+    "training college phone number Kenya",
+    "college email address Kenya",
+    "St Johns Training College phone number",
+    "college location Samburu"
+  ],
+
+  openGraph: {
+    title: "Contact St Johns Training College Samburu",
+    description:
+      "Reach St Johns Training College via phone, email, or visit our Samburu campus for admissions and course enquiries.",
+    url: "https://stjohnscollege.ac.ke/contact",
+    siteName: "St Johns Training College",
+    images: [
+      {
+        url: "/og-contact.jpg",
+        width: 1200,
+        height: 630,
+        alt: "St Johns Training College Samburu Contact Page",
+      },
+    ],
+    type: "website",
+  },
+
+  alternates: {
+    canonical: "https://stjohnscollege.ac.ke/contact",
+  },
+};
+
 const departments = [
   'Admissions Office',
   'Academics / Registrar',

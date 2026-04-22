@@ -2,7 +2,41 @@ import { FiCheck, FiAward, FiTarget, FiEye, FiHeart } from 'react-icons/fi';
 import { MdOutlineSchool } from 'react-icons/md';
 import styles from './about.module.css';
 
-export const metadata = { title: 'About Us' };
+export const metadata = {
+  title: "About St Johns Training College Samburu | History, Mission & Leadership",
+  description:
+    "Learn about St Johns Training College in Samburu, Kenya. Discover our history, mission, vision, leadership team, and commitment to quality education and student success.",
+  keywords: [
+    "about St Johns Training College",
+    "St Johns Samburu history",
+    "college in Samburu Kenya",
+    "training college Kenya about",
+    "St Johns Training College leadership",
+    "technical college Samburu",
+    "TVET college Kenya"
+  ],
+
+  openGraph: {
+    title: "About St Johns Training College Samburu",
+    description:
+      "Explore the history, mission, and leadership of St Johns Training College in Samburu, Kenya.",
+    url: "https://stjohnscollege.ac.ke/about",
+    siteName: "St Johns Training College",
+    images: [
+      {
+        url: "https://stjohnscollege.ac.ke/og-about.jpg",
+        width: 1200,
+        height: 630,
+        alt: "St Johns Training College Samburu Campus",
+      },
+    ],
+    type: "website",
+  },
+
+  alternates: {
+    canonical: "https://stjohnscollege.ac.ke/about",
+  },
+};
 
 const leadership = [
   { name: 'Dr Leornanrd Mambo', role: 'Director', desc: '20+ years in academia' },
