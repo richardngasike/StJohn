@@ -1300,9 +1300,9 @@ ul, ol {
   content: '';
   position: absolute;
   inset: 0;
-  background: url('/images/aboutsection.jpg') no-repeat center center;
+  background: url('/images/aboutcover.png') no-repeat center center;
   background-size: cover;
-  opacity: 0.34;
+  opacity: 0.44;
 }
 .page-header-content {
   position: relative;
