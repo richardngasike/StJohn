@@ -1,50 +1,64 @@
 'use client';
+
 import { useState } from 'react';
+
 import {
-  FiPhone, FiMail, FiMapPin, FiClock, FiSend,
-  FiUser, FiMessageSquare, FiChevronDown
+  FiPhone,
+  FiMail,
+  FiMapPin,
+  FiClock,
+  FiSend,
+  FiUser,
+  FiMessageSquare,
+  FiChevronDown,
 } from 'react-icons/fi';
+
 import {
-  FiFacebook, FiTwitter, FiInstagram, FiYoutube, FiLinkedin
-} from 'react-icons/fi';
+  FaFacebook,
+  FaTwitter,
+  FaInstagram,
+  FaYoutube,
+  FaLinkedin,
+} from 'react-icons/fa';
+
 import toast from 'react-hot-toast';
 import styles from './contact.module.css';
 
-export const metadata = {
-  title: "Contact St Johns Training College Samburu | Phone, Email & Location",
-  description:
-    "Get in touch with St Johns Training College in Samburu, Kenya. Contact us via phone, email, or visit our campus for admissions, courses, and enquiries.",
-  keywords: [
-    "St Johns Training College contact",
-    "St Johns Samburu contacts",
-    "college contact Samburu Kenya",
-    "training college phone number Kenya",
-    "college email address Kenya",
-    "St Johns Training College phone number",
-    "college location Samburu"
-  ],
+// export const metadata = {
+//   title: "Contact St Johns Training College Samburu | Phone, Email & Location",
+//   description:
+//     "Get in touch with St Johns Training College in Samburu, Kenya. Contact us via phone, email, or visit our campus for admissions, courses, and enquiries.",
+//   keywords: [
+//     "St Johns Training College contact",
+//     "St Johns Samburu contacts",
+//     "college contact Samburu Kenya",
+//     "training college phone number Kenya",
+//     "college email address Kenya",
+//     "St Johns Training College phone number",
+//     "college location Samburu"
+//   ],
 
-  openGraph: {
-    title: "Contact St Johns Training College Samburu",
-    description:
-      "Reach St Johns Training College via phone, email, or visit our Samburu campus for admissions and course enquiries.",
-    url: "https://stjohnscollege.ac.ke/contact",
-    siteName: "St Johns Training College",
-    images: [
-      {
-        url: "/og-contact.jpg",
-        width: 1200,
-        height: 630,
-        alt: "St Johns Training College Samburu Contact Page",
-      },
-    ],
-    type: "website",
-  },
+//   openGraph: {
+//     title: "Contact St Johns Training College Samburu",
+//     description:
+//       "Reach St Johns Training College via phone, email, or visit our Samburu campus for admissions and course enquiries.",
+//     url: "https://stjohnscollege.ac.ke/contact",
+//     siteName: "St Johns Training College",
+//     images: [
+//       {
+//         url: "/og-contact.jpg",
+//         width: 1200,
+//         height: 630,
+//         alt: "St Johns Training College Samburu Contact Page",
+//       },
+//     ],
+//     type: "website",
+//   },
 
-  alternates: {
-    canonical: "https://stjohnscollege.ac.ke/contact",
-  },
-};
+//   alternates: {
+//     canonical: "https://stjohnscollege.ac.ke/contact",
+//   },
+// };
 
 const departments = [
   'Admissions Office',
@@ -57,39 +71,101 @@ const departments = [
 ];
 
 const faqs = [
-  { q: 'What are the minimum entry requirements?', a: 'For certificate programs, you need KCSE grade D or above. For diploma programs, C- or above. Some programs have specific subject requirements. Contact admissions for details.' },
-  { q: 'How long does the application process take?', a: 'Once you submit a complete application, our admissions team reviews it within 3–5 business days and sends you a decision via email and SMS.' },
-  { q: 'Do you offer scholarships or financial aid?', a: 'Yes. We offer merit-based scholarships, HELB loans for eligible students, and payment plans. Visit our admissions office or contact us for details on current opportunities.' },
-  { q: 'Can I apply for multiple programs?', a: 'Yes, you can indicate preferred alternative programs in your application. However, you will be admitted to only one program per intake.' },
-  { q: 'Is there student accommodation on campus?', a: 'We do not have on-campus hostels, but we have a list of vetted and affordable accommodation options near the college. Contact student affairs for guidance.' },
+  {
+    q: 'What are the minimum entry requirements?',
+    a: 'For certificate programs, you need KCSE grade D or above. For diploma programs, C- or above. Some programs have specific subject requirements. Contact admissions for details.',
+  },
+  {
+    q: 'How long does the application process take?',
+    a: 'Once you submit a complete application, our admissions team reviews it within 3–5 business days and sends you a decision via email and SMS.',
+  },
+  {
+    q: 'Do you offer scholarships or financial aid?',
+    a: 'Yes. We offer merit-based scholarships, HELB loans for eligible students, and payment plans. Visit our admissions office or contact us for details on current opportunities.',
+  },
+  {
+    q: 'Can I apply for multiple programs?',
+    a: 'Yes, you can indicate preferred alternative programs in your application. However, you will be admitted to only one program per intake.',
+  },
+  {
+    q: 'Is there student accommodation on campus?',
+    a: 'We do not have on-campus hostels, but we have a list of vetted and affordable accommodation options near the college. Contact student affairs for guidance.',
+  },
 ];
 
 export default function ContactPage() {
-  const [form, setForm] = useState({ name: '', email: '', phone: '', department: '', subject: '', message: '' });
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    department: '',
+    subject: '',
+    message: '',
+  });
+
   const [sending, setSending] = useState(false);
   const [openFaq, setOpenFaq] = useState(null);
 
-  const update = (k, v) => setForm(f => ({ ...f, [k]: v }));
+  const update = (key, value) => {
+    setForm((prev) => ({
+      ...prev,
+      [key]: value,
+    }));
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!form.name || !form.email || !form.message) { toast.error('Please fill in required fields'); return; }
+
+    if (!form.name || !form.email || !form.subject || !form.message) {
+      toast.error('Please fill in all required fields');
+      return;
+    }
+
     setSending(true);
+
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/contact`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
-      });
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/contact`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(form),
+        }
+      );
+
       if (res.ok) {
-        toast.success('Message sent! We\'ll respond within 24 hours.');
-        setForm({ name: '', email: '', phone: '', department: '', subject: '', message: '' });
+        toast.success(
+          "Message sent successfully! We'll respond within 24 hours."
+        );
+
+        setForm({
+          name: '',
+          email: '',
+          phone: '',
+          department: '',
+          subject: '',
+          message: '',
+        });
       } else {
         toast.error('Failed to send message. Please try again.');
       }
-    } catch {
-      toast.success('Message sent! We\'ll respond within 24 hours. (Demo mode)');
-      setForm({ name: '', email: '', phone: '', department: '', subject: '', message: '' });
+    } catch (error) {
+      console.error(error);
+
+      toast.success(
+        "Message sent! We'll respond within 24 hours. (Demo mode)"
+      );
+
+      setForm({
+        name: '',
+        email: '',
+        phone: '',
+        department: '',
+        subject: '',
+        message: '',
+      });
     } finally {
       setSending(false);
     }
@@ -97,107 +173,298 @@ export default function ContactPage() {
 
   return (
     <>
+      {/* PAGE HEADER */}
       <div className="page-header">
         <div className="container">
           <div className="page-header-content">
             <div className="breadcrumb">
-              <a href="/">Home</a><span className="sep">/</span><span>Contact Us</span>
+              <a href="/">Home</a>
+              <span className="sep">/</span>
+              <span>Contact Us</span>
             </div>
+
             <h1>Get In Touch</h1>
-            <p>We're here to help. Reach out to our team for admissions, academics, or any other enquiries.</p>
+
+            <p>
+              We&apos;re here to help. Reach out to our team for admissions,
+              academics, or any other enquiries.
+            </p>
           </div>
         </div>
       </div>
 
-      {/* Contact Info Cards */}
+      {/* CONTACT INFO */}
       <section className={styles.infoSection}>
         <div className="container">
           <div className={styles.infoGrid}>
             {[
-              { icon: FiPhone, title: 'Call Us', lines: ['+254 720 215 715', '+254 720 215 715'], note: 'Mon–Fri, 8am–5pm', color: 'green', href: 'tel:+254720215715' },
-              { icon: FiMail, title: 'Email Us', lines: ['stjohnstrainingcollege@gmail.com', 'stjohnstrainingcollege@gmail.com'], note: 'We reply within 24 hours', color: 'gold', href: 'mailto:stjohnstrainingcollege@gmail.com' },
-              { icon: FiMapPin, title: 'Visit Us', lines: ['Cereal Board Road', 'Samburu, Kenya'], note: 'P.O. Box 00100', color: 'brown', href: '#map' },
-              { icon: FiClock, title: 'Office Hours', lines: ['Mon–Fri: 8:00am – 5:00pm', 'Sat: 9:00am – 1:00pm'], note: 'Closed Sundays & Public Holidays', color: 'green' },
-            ].map((c, i) => (
-              <a key={i} href={c.href || '#'} className={`${styles.infoCard} ${styles[`infoCard_${c.color}`]}`} style={{ textDecoration: 'none' }}>
-                <div className={styles.infoCardIcon}><c.icon size={22} /></div>
-                <h3>{c.title}</h3>
-                {c.lines.map((l, j) => <p key={j}>{l}</p>)}
-                <span>{c.note}</span>
+              {
+                icon: FiPhone,
+                title: 'Call Us',
+                lines: ['+254 720 215 715', '+254 720 215 715'],
+                note: 'Mon–Fri, 8am–5pm',
+                color: 'green',
+                href: 'tel:+254720215715',
+              },
+              {
+                icon: FiMail,
+                title: 'Email Us',
+                lines: [
+                  'stjohnstrainingcollege@gmail.com',
+                  'stjohnstrainingcollege@gmail.com',
+                ],
+                note: 'We reply within 24 hours',
+                color: 'gold',
+                href: 'mailto:stjohnstrainingcollege@gmail.com',
+              },
+              {
+                icon: FiMapPin,
+                title: 'Visit Us',
+                lines: ['Cereal Board Road', 'Samburu, Kenya'],
+                note: 'P.O. Box 00100',
+                color: 'brown',
+                href: '#map',
+              },
+              {
+                icon: FiClock,
+                title: 'Office Hours',
+                lines: [
+                  'Mon–Fri: 8:00am – 5:00pm',
+                  'Sat: 9:00am – 1:00pm',
+                ],
+                note: 'Closed Sundays & Public Holidays',
+                color: 'green',
+              },
+            ].map((card, index) => (
+              <a
+                key={index}
+                href={card.href || '#'}
+                className={`${styles.infoCard} ${
+                  styles[`infoCard_${card.color}`]
+                }`}
+                style={{ textDecoration: 'none' }}
+              >
+                <div className={styles.infoCardIcon}>
+                  <card.icon size={22} />
+                </div>
+
+                <h3>{card.title}</h3>
+
+                {card.lines.map((line, i) => (
+                  <p key={i}>{line}</p>
+                ))}
+
+                <span>{card.note}</span>
               </a>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Form + Map */}
+      {/* MAIN CONTENT */}
       <section className="section">
         <div className="container">
           <div className={styles.mainGrid}>
-            {/* Form */}
+            {/* CONTACT FORM */}
             <div className={styles.formWrap}>
               <div className={styles.formHeader}>
                 <h2>Send Us a Message</h2>
-                <p>Fill out the form and our team will get back to you within 24 hours.</p>
+
+                <p>
+                  Fill out the form and our team will get back to you within 24
+                  hours.
+                </p>
               </div>
+
               <form onSubmit={handleSubmit} className={styles.form}>
                 <div className={styles.formRow}>
                   <div className="form-group">
-                    <label className="form-label">Full Name <span className="required">*</span></label>
+                    <label className="form-label">
+                      Full Name <span className="required">*</span>
+                    </label>
+
                     <div className={styles.inputWrap}>
-                      <FiUser size={15} className={styles.inputIcon} />
-                      <input className="form-input" style={{ paddingLeft: 38 }} value={form.name} onChange={e => update('name', e.target.value)} placeholder="Your full name" required />
+                      <FiUser
+                        size={15}
+                        className={styles.inputIcon}
+                      />
+
+                      <input
+                        type="text"
+                        className="form-input"
+                        style={{ paddingLeft: 38 }}
+                        value={form.name}
+                        onChange={(e) =>
+                          update('name', e.target.value)
+                        }
+                        placeholder="Your full name"
+                        required
+                      />
                     </div>
                   </div>
+
                   <div className="form-group">
-                    <label className="form-label">Email Address <span className="required">*</span></label>
+                    <label className="form-label">
+                      Email Address <span className="required">*</span>
+                    </label>
+
                     <div className={styles.inputWrap}>
-                      <FiMail size={15} className={styles.inputIcon} />
-                      <input type="email" className="form-input" style={{ paddingLeft: 38 }} value={form.email} onChange={e => update('email', e.target.value)} placeholder="your@email.com" required />
+                      <FiMail
+                        size={15}
+                        className={styles.inputIcon}
+                      />
+
+                      <input
+                        type="email"
+                        className="form-input"
+                        style={{ paddingLeft: 38 }}
+                        value={form.email}
+                        onChange={(e) =>
+                          update('email', e.target.value)
+                        }
+                        placeholder="your@email.com"
+                        required
+                      />
                     </div>
                   </div>
                 </div>
+
                 <div className={styles.formRow}>
                   <div className="form-group">
-                    <label className="form-label">Phone Number</label>
+                    <label className="form-label">
+                      Phone Number
+                    </label>
+
                     <div className={styles.inputWrap}>
-                      <FiPhone size={15} className={styles.inputIcon} />
-                      <input className="form-input" style={{ paddingLeft: 38 }} value={form.phone} onChange={e => update('phone', e.target.value)} placeholder="+254 7XX XXX XXX" />
+                      <FiPhone
+                        size={15}
+                        className={styles.inputIcon}
+                      />
+
+                      <input
+                        type="text"
+                        className="form-input"
+                        style={{ paddingLeft: 38 }}
+                        value={form.phone}
+                        onChange={(e) =>
+                          update('phone', e.target.value)
+                        }
+                        placeholder="+254 7XX XXX XXX"
+                      />
                     </div>
                   </div>
+
                   <div className="form-group">
-                    <label className="form-label">Department</label>
-                    <select className="form-select" value={form.department} onChange={e => update('department', e.target.value)}>
+                    <label className="form-label">
+                      Department
+                    </label>
+
+                    <select
+                      className="form-select"
+                      value={form.department}
+                      onChange={(e) =>
+                        update('department', e.target.value)
+                      }
+                    >
                       <option value="">Select department</option>
-                      {departments.map(d => <option key={d}>{d}</option>)}
+
+                      {departments.map((department) => (
+                        <option
+                          key={department}
+                          value={department}
+                        >
+                          {department}
+                        </option>
+                      ))}
                     </select>
                   </div>
                 </div>
+
                 <div className="form-group">
-                  <label className="form-label">Subject <span className="required">*</span></label>
-                  <input className="form-input" value={form.subject} onChange={e => update('subject', e.target.value)} placeholder="Brief subject of your message" required />
+                  <label className="form-label">
+                    Subject <span className="required">*</span>
+                  </label>
+
+                  <input
+                    type="text"
+                    className="form-input"
+                    value={form.subject}
+                    onChange={(e) =>
+                      update('subject', e.target.value)
+                    }
+                    placeholder="Brief subject of your message"
+                    required
+                  />
                 </div>
+
                 <div className="form-group">
-                  <label className="form-label">Message <span className="required">*</span></label>
+                  <label className="form-label">
+                    Message <span className="required">*</span>
+                  </label>
+
                   <div className={styles.inputWrap}>
-                    <FiMessageSquare size={15} className={`${styles.inputIcon} ${styles.textareaIcon}`} />
-                    <textarea className="form-textarea" style={{ paddingLeft: 38, minHeight: 140 }} value={form.message} onChange={e => update('message', e.target.value)} placeholder="Write your message here..." required />
+                    <FiMessageSquare
+                      size={15}
+                      className={`${styles.inputIcon} ${styles.textareaIcon}`}
+                    />
+
+                    <textarea
+                      className="form-textarea"
+                      style={{
+                        paddingLeft: 38,
+                        minHeight: 140,
+                      }}
+                      value={form.message}
+                      onChange={(e) =>
+                        update('message', e.target.value)
+                      }
+                      placeholder="Write your message here..."
+                      required
+                    />
                   </div>
                 </div>
-                <button type="submit" className="btn btn-primary btn-lg" disabled={sending} style={{ width: '100%', justifyContent: 'center' }}>
-                  {sending ? <><span className="loading-spinner" /> Sending...</> : <><FiSend size={16} /> Send Message</>}
+
+                <button
+                  type="submit"
+                  className="btn btn-primary btn-lg"
+                  disabled={sending}
+                  style={{
+                    width: '100%',
+                    justifyContent: 'center',
+                  }}
+                >
+                  {sending ? (
+                    <>
+                      <span className="loading-spinner" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <FiSend size={16} />
+                      Send Message
+                    </>
+                  )}
                 </button>
               </form>
             </div>
 
-            {/* Map + Social */}
+            {/* MAP + SOCIAL */}
             <div className={styles.mapSide}>
               <div className={styles.mapBox} id="map">
                 <div className={styles.mapPlaceholder}>
                   <FiMapPin size={40} />
+
                   <h4>St Johns Training College</h4>
+
                   <p>Cereal Board Road, Samburu, Kenya</p>
-                  <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm" style={{ marginTop: 12 }}>
+
+                  <a
+                    href="https://maps.google.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-primary btn-sm"
+                    style={{ marginTop: 12 }}
+                  >
                     Open in Google Maps
                   </a>
                 </div>
@@ -205,18 +472,49 @@ export default function ContactPage() {
 
               <div className={styles.socialCard}>
                 <h4>Follow Us</h4>
-                <p>Stay updated with college news, events, and announcements.</p>
+
+                <p>
+                  Stay updated with college news, events, and
+                  announcements.
+                </p>
+
                 <div className={styles.socials}>
                   {[
-                    { icon: FiFacebook,  label: 'Facebook', color: '#1877f2' },
-                    { icon: FiTwitter,   label: 'Twitter',  color: '#1da1f2' },
-                    { icon: FiInstagram, label: 'Instagram',color: '#e1306c' },
-                    { icon: FiYoutube,   label: 'YouTube',  color: '#ff0000' },
-                    { icon: FiLinkedin,  label: 'LinkedIn', color: '#0077b5' },
-                  ].map((s, i) => (
-                    <a key={i} href="#" className={styles.socialBtn} style={{ '--sc': s.color }} aria-label={s.label}>
-                      <s.icon size={18} />
-                      <span>{s.label}</span>
+                    {
+                      icon: FaFacebook,
+                      label: 'Facebook',
+                      color: '#1877f2',
+                    },
+                    {
+                      icon: FaTwitter,
+                      label: 'Twitter',
+                      color: '#1da1f2',
+                    },
+                    {
+                      icon: FaInstagram,
+                      label: 'Instagram',
+                      color: '#e1306c',
+                    },
+                    {
+                      icon: FaYoutube,
+                      label: 'YouTube',
+                      color: '#ff0000',
+                    },
+                    {
+                      icon: FaLinkedin,
+                      label: 'LinkedIn',
+                      color: '#0077b5',
+                    },
+                  ].map((social, index) => (
+                    <a
+                      key={index}
+                      href="#"
+                      className={styles.socialBtn}
+                      style={{ '--sc': social.color }}
+                      aria-label={social.label}
+                    >
+                      <social.icon size={18} />
+                      <span>{social.label}</span>
                     </a>
                   ))}
                 </div>
@@ -224,17 +522,26 @@ export default function ContactPage() {
 
               <div className={styles.emergencyCard}>
                 <h4>Emergency Contacts</h4>
+
                 <div className={styles.emergencyItem}>
                   <span>Security</span>
-                  <a href="tel:+254700000001">+254 720 215 715</a>
+                  <a href="tel:+254720215715">
+                    +254 720 215 715
+                  </a>
                 </div>
+
                 <div className={styles.emergencyItem}>
                   <span>Student Affairs</span>
-                  <a href="tel:+254700000002">+254 720 215 715</a>
+                  <a href="tel:+254720215715">
+                    +254 720 215 715
+                  </a>
                 </div>
+
                 <div className={styles.emergencyItem}>
                   <span>Medical / First Aid</span>
-                  <a href="tel:+254700000003">+254 720 215 715</a>
+                  <a href="tel:+254720215715">
+                    +254 720 215 715
+                  </a>
                 </div>
               </div>
             </div>
@@ -248,20 +555,58 @@ export default function ContactPage() {
           <div className={styles.faqInner}>
             <div className={styles.faqLeft}>
               <div className="section-label">FAQ</div>
-              <h2 className="section-title">Frequently Asked <span>Questions</span></h2>
-              <p className="section-subtitle">Can't find your answer? Contact our admissions team directly.</p>
-              <a href="tel:+254720215715" className="btn btn-primary" style={{ marginTop: 24 }}>
-                <FiPhone size={15} /> Call Us Now
+
+              <h2 className="section-title">
+                Frequently Asked <span>Questions</span>
+              </h2>
+
+              <p className="section-subtitle">
+                Can&apos;t find your answer? Contact our admissions
+                team directly.
+              </p>
+
+              <a
+                href="tel:+254720215715"
+                className="btn btn-primary"
+                style={{ marginTop: 24 }}
+              >
+                <FiPhone size={15} />
+                Call Us Now
               </a>
             </div>
+
             <div className={styles.faqList}>
-              {faqs.map((faq, i) => (
-                <div key={i} className={`${styles.faqItem} ${openFaq === i ? styles.faqItemOpen : ''}`}>
-                  <button className={styles.faqQ} onClick={() => setOpenFaq(openFaq === i ? null : i)}>
+              {faqs.map((faq, index) => (
+                <div
+                  key={index}
+                  className={`${styles.faqItem} ${
+                    openFaq === index
+                      ? styles.faqItemOpen
+                      : ''
+                  }`}
+                >
+                  <button
+                    type="button"
+                    className={styles.faqQ}
+                    onClick={() =>
+                      setOpenFaq(
+                        openFaq === index ? null : index
+                      )
+                    }
+                  >
                     <span>{faq.q}</span>
-                    <FiChevronDown size={18} className={styles.faqChevron} />
+
+                    <FiChevronDown
+                      size={18}
+                      className={styles.faqChevron}
+                    />
                   </button>
-                  {openFaq === i && <div className={styles.faqA}>{faq.a}</div>}
+
+                  {openFaq === index && (
+                    <div className={styles.faqA}>
+                      {faq.a}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>

@@ -1,110 +1,105 @@
 'use client';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import Link from 'next/link';
 import {
   FiChevronLeft,
   FiChevronRight,
-  FiArrowRight,
-  FiAward,
-  FiUsers,
-  FiBook,
+  FiArrowUpRight,
 } from 'react-icons/fi';
-import { MdOutlineSchool } from 'react-icons/md';
+import {
+  MdOutlineSchool,
+  MdOutlineVerified,
+  MdOutlineCalendarMonth,
+  MdOutlineCorporateFare,
+} from 'react-icons/md';
 import styles from './Hero.module.css';
 
 const slides = [
   {
     id: 1,
-    title: "St. John's\nTraining College",
+    eyebrow: 'Teacher Training Excellence',
+    title: "Shaping Kenya's\nNext Generation",
     subtitle:
-      'Providing world-class teacher training that prepares graduates for professional success and national service in Kenya.',
+      "Aspire to Inspire before you Expire — St. John's prepares educators who lead, inspire, and transform communities across Kenya.",
     cta: { label: 'Explore Programs', href: '/programs' },
     cta2: { label: 'Apply Now', href: '/apply' },
-    bg: 'slide1',
-    accent: 'Aspire to Inspire before you Expire',
-    stat: { value: '98%', label: 'Employment Rate' },
+    bg: '/images/hero100.png',
+    stat: { value: '98%', label: 'Employment Rate', icon: MdOutlineVerified },
   },
   {
     id: 2,
-    title: 'Your Future Starts\nHere Today',
+    eyebrow: 'Admissions Open — 2026',
+    title: 'Your Future\nStarts Here',
     subtitle:
-      "Join thousands of successful graduates who began their journey at St. John's. Applications for the new academic year are now open.",
+      "Applications for the new academic year are open. Join thousands of successful graduates who began their journey at St. John's Training College.",
     cta: { label: 'Apply Online', href: '/apply' },
     cta2: { label: 'Learn More', href: '/about' },
-    bg: 'slide2',
-    accent: 'Deadline: August 30, 2026',
-    stat: { value: '500+', label: 'Students Enrolled' },
+    bg: '/images/hero2.png',
+    stat: { value: 'Aug 30', label: 'Application Deadline', icon: MdOutlineCalendarMonth },
   },
   {
     id: 3,
-    title: 'Beyond Academics:\nGrow, Lead, Thrive',
+    eyebrow: 'Campus Life & Facilities',
+    title: 'Grow, Lead\nand Thrive',
     subtitle:
-      'State-of-the-art facilities, mentorship, sports, and extracurricular activities that shape well-rounded educators.',
+      'State-of-the-art facilities, mentorship programmes, sports, and extracurricular activities that shape well-rounded, confident educators.',
     cta: { label: 'Campus Life', href: '/about#campus' },
     cta2: { label: 'Student Portal', href: '/portal' },
-    bg: 'slide3',
-    accent: 'Modern Campus Facilities',
-    stat: { value: '40+', label: 'Programs Offered' },
+    bg: '/images/hero10.png',
+    stat: { value: '40+', label: 'Programmes Offered', icon: MdOutlineSchool },
   },
   {
     id: 4,
-    title: 'Connecting Education\nWith Industry',
+    eyebrow: 'Industry Partnerships',
+    title: 'Education Meets\nOpportunity',
     subtitle:
-      'Strong partnerships ensure relevant curriculum, premium internships, and excellent career prospects for our graduates.',
-    cta: { label: 'Our Programs', href: '/programs' },
+      'Strong partnerships with leading institutions ensure relevant curriculum, premium placements, and exceptional career prospects for our graduates.',
+    cta: { label: 'Our Programmes', href: '/programs' },
     cta2: { label: 'Contact Us', href: '/contact' },
-    bg: 'slide4',
-    accent: '50+ Industry Partners',
-    stat: { value: '10+', label: 'Years of Excellence' },
+    bg: '/images/bg.jpeg',
+    stat: { value: '50+', label: 'Industry Partners', icon: MdOutlineCorporateFare },
   },
-];
-
-const bgImages = [
-  '/images/hero11.png',
-  '/images/hero2.png',
-  '/images/hero10.png',
-  '/images/bg.jpeg',
- 
 ];
 
 export default function Hero() {
   const [active, setActive] = useState(0);
   const [prev, setPrev] = useState(null);
-  const [direction, setDirection] = useState(1);
   const [animating, setAnimating] = useState(false);
   const [paused, setPaused] = useState(false);
+  const [contentKey, setContentKey] = useState(0);
+  const timerRef = useRef(null);
 
   const goTo = useCallback(
-    (idx, dir = 1) => {
+    (idx) => {
       if (animating || idx === active) return;
       setPrev(active);
-      setDirection(dir);
       setAnimating(true);
       setActive(idx);
+      setContentKey((k) => k + 1);
       setTimeout(() => {
         setPrev(null);
         setAnimating(false);
-      }, 800);
+      }, 1000);
     },
     [active, animating]
   );
 
   const next = useCallback(() => {
-    goTo((active + 1) % slides.length, 1);
+    goTo((active + 1) % slides.length);
   }, [active, goTo]);
 
   const goBack = useCallback(() => {
-    goTo((active - 1 + slides.length) % slides.length, -1);
+    goTo((active - 1 + slides.length) % slides.length);
   }, [active, goTo]);
 
-  // Auto-play
   useEffect(() => {
     if (paused) return;
-    const timer = setInterval(next, 5500);
-    return () => clearInterval(timer);
+    timerRef.current = setInterval(next, 6000);
+    return () => clearInterval(timerRef.current);
   }, [next, paused]);
 
   const slide = slides[active];
+  const StatIcon = slide.stat.icon;
 
   return (
     <section
@@ -113,157 +108,144 @@ export default function Hero() {
       onMouseLeave={() => setPaused(false)}
       aria-label="Hero banner"
     >
-      {/* Background Slides */}
-      <div className={styles.bgWrapper}>
+      {/* ── Backgrounds ── */}
+      <div className={styles.bgWrapper} aria-hidden="true">
         {slides.map((s, i) => (
           <div
             key={s.id}
-            className={`${styles.bg}${i === active ? ` ${styles.bgActive}` : ''}${prev === i ? ` ${styles.bgPrev}` : ''}`}
-            style={{ backgroundImage: `url(${bgImages[i]})` }}
-            aria-hidden="true"
+            className={[
+              styles.bg,
+              i === active ? styles.bgActive : '',
+              prev === i ? styles.bgPrev : '',
+            ]
+              .filter(Boolean)
+              .join(' ')}
+            style={{ backgroundImage: `url(${s.bg})` }}
           />
         ))}
-        <div className={styles.overlay} />
-        <div className={styles.patternOverlay} />
-        {/* Decorative floating shapes */}
-        <div className={styles.shape1} />
-        <div className={styles.shape2} />
-        <div className={styles.shape3} />
+
+        {/* Cinematic overlays — four layers for strong text protection */}
+        <div className={styles.overlayBase} />
+        <div className={styles.overlayBottom} />
+        <div className={styles.overlayTop} />
+        <div className={styles.overlayLeft} />
+
+        {/* Grain texture */}
+        <div className={styles.grain} />
       </div>
 
-      {/* Main Content */}
-      <div className={`container ${styles.content}`}>
-        <div className={styles.contentLeft}>
+      {/* ── Side Arrows ── */}
+      <button
+        className={`${styles.arrow} ${styles.arrowLeft}`}
+        onClick={goBack}
+        aria-label="Previous slide"
+      >
+        <FiChevronLeft size={28} />
+      </button>
+      <button
+        className={`${styles.arrow} ${styles.arrowRight}`}
+        onClick={next}
+        aria-label="Next slide"
+      >
+        <FiChevronRight size={28} />
+      </button>
 
-          {/* Title */}
-          <h1 className={styles.title} key={`title-${active}`}>
-            {slide.title.split('\n').map((line, i) => (
-              <span
-                key={i}
-                className={styles.titleLine}
-                style={{ animationDelay: `${i * 0.1}s` }}
-              >
-                {line}
-              </span>
-            ))}
-          </h1>
-
-          {/* Subtitle */}
-          <p className={styles.subtitle} key={`sub-${active}`}>
-            {slide.subtitle}
-          </p>
-
-          {/* Accent */}
-          <div className={styles.accent} key={`accent-${active}`}>
-            <FiAward size={16} />
-            <span>{slide.accent}</span>
-          </div>
-
-          {/* CTAs */}
-          <div className={styles.ctas} key={`cta-${active}`}>
-            <Link
-              href={slide.cta.href}
-              className={styles.ctaPrimary}
-              aria-label={slide.cta.label}
-            >
-              {slide.cta.label}
-              <FiArrowRight size={18} />
-            </Link>
-            <Link
-              href={slide.cta2.href}
-              className={styles.ctaSecondary}
-              aria-label={slide.cta2.label}
-            >
-              {slide.cta2.label}
-            </Link>
-          </div>
-
-          {/* Dynamic Quick Stats */}
-          <div className={styles.quickStats}>
-            <div className={styles.quickStat}>
-              <FiUsers size={18} />
-              <div>
-                <strong>500+</strong>
-                <span>Students</span>
-              </div>
-            </div>
-            <div className={styles.quickStatDivider} />
-            <div className={styles.quickStat}>
-              <FiBook size={18} />
-              <div>
-                <strong>{slide.stat.value.includes('+') ? slide.stat.value : '40+'}</strong>
-                <span>Programs</span>
-              </div>
-            </div>
-            <div className={styles.quickStatDivider} />
-            <div className={styles.quickStat}>
-              <FiAward size={18} />
-              <div>
-                <strong>10+</strong>
-                <span>Years</span>
-              </div>
-            </div>
-          </div>
+      {/* ── Main Content — centred ── */}
+      <div className={styles.stage}>
+        {/* Eyebrow */}
+        <div className={styles.eyebrow} key={`ey-${contentKey}`}>
+          <span className={styles.eyebrowLine} />
+          <span>{slide.eyebrow}</span>
+          <span className={styles.eyebrowLine} />
         </div>
 
-        {/* Right Side - Stat Card */}
-        <div className={styles.contentRight}>
-          <div className={styles.statCard} key={`stat-${active}`}>
-            <div className={styles.statIcon}>
-              <MdOutlineSchool size={32} />
-            </div>
-            <div className={styles.statValue}>{slide.stat.value}</div>
-            <div className={styles.statLabel}>{slide.stat.label}</div>
-            <div className={styles.statCardLine} />
-            <p className={styles.statDesc}>
-              St. John&apos;s Training College — proudly shaping Kenya&apos;s future
-              educators since 2015.
-            </p>
-          </div>
+        {/* Title */}
+        <h1 className={styles.title} key={`ti-${contentKey}`}>
+          {slide.title.split('\n').map((line, i) => (
+            <span
+              key={i}
+              className={styles.titleLine}
+              style={{ animationDelay: `${0.1 + i * 0.12}s` }}
+            >
+              {line}
+            </span>
+          ))}
+        </h1>
+
+        {/* Subtitle */}
+        <p className={styles.subtitle} key={`su-${contentKey}`}>
+          {slide.subtitle}
+        </p>
+
+        {/* CTA Row */}
+        <div className={styles.ctas} key={`ct-${contentKey}`}>
+          <Link href={slide.cta.href} className={styles.ctaPrimary}>
+            <span>{slide.cta.label}</span>
+            <FiArrowUpRight size={18} className={styles.ctaIcon} />
+          </Link>
+          <Link href={slide.cta2.href} className={styles.ctaSecondary}>
+            {slide.cta2.label}
+          </Link>
         </div>
       </div>
 
-      {/* Navigation Controls */}
-      <div className={styles.controls}>
-        <button
-          onClick={goBack}
-          className={styles.controlBtn}
-          aria-label="Previous slide"
-        >
-          <FiChevronLeft size={22} />
-        </button>
-        <div className={styles.dots}>
+      {/* ── Slide Counter ── */}
+      <div className={styles.counter} aria-hidden="true">
+        <span className={styles.counterActive}>
+          {String(active + 1).padStart(2, '0')}
+        </span>
+        <span className={styles.counterSep} />
+        <span className={styles.counterTotal}>
+          {String(slides.length).padStart(2, '0')}
+        </span>
+      </div>
+
+      {/* ── Bottom Bar — stat + dots + progress ── */}
+      <div className={styles.bottomBar}>
+        {/* Stat pill */}
+        <div className={styles.statPill} key={`sp-${contentKey}`}>
+          <div className={styles.statPillIcon}>
+            <StatIcon size={18} />
+          </div>
+          <div className={styles.statPillBody}>
+            <strong>{slide.stat.value}</strong>
+            <span>{slide.stat.label}</span>
+          </div>
+        </div>
+
+        {/* Dots */}
+        <div className={styles.dots} role="tablist" aria-label="Slide navigation">
           {slides.map((_, i) => (
             <button
               key={i}
-              onClick={() => goTo(i, i > active ? 1 : -1)}
-              className={`${styles.dot}${i === active ? ` ${styles.dotActive}` : ''}`}
-              aria-label={`Go to slide ${i + 1}`}
-              aria-current={i === active ? 'true' : 'false'}
+              role="tab"
+              aria-selected={i === active}
+              aria-label={`Slide ${i + 1}`}
+              onClick={() => goTo(i)}
+              className={[styles.dot, i === active ? styles.dotActive : '']
+                .filter(Boolean)
+                .join(' ')}
             />
           ))}
         </div>
-        <button
-          onClick={next}
-          className={styles.controlBtn}
-          aria-label="Next slide"
-        >
-          <FiChevronRight size={22} />
-        </button>
+
+        {/* Progress bar */}
+        <div className={styles.progressTrack} aria-hidden="true">
+          <div
+            key={`pr-${contentKey}`}
+            className={[
+              styles.progress,
+              !paused ? styles.progressAnimate : '',
+            ]
+              .filter(Boolean)
+              .join(' ')}
+          />
+        </div>
       </div>
 
-      {/* Progress Bar */}
-      <div className={styles.progressBar}>
-        <div
-          key={`progress-${active}`}
-          className={`${styles.progress}${!paused ? ` ${styles.progressAnimate}` : ''}`}
-        />
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className={styles.scrollIndicator}>
-        <div className={styles.scrollDot} />
-        <span>Scroll to explore</span>
+      {/* ── College name watermark ── */}
+      <div className={styles.watermark} aria-hidden="true">
+        St. John&apos;s Training College
       </div>
     </section>
   );

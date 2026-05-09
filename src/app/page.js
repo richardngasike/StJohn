@@ -1,10 +1,10 @@
-import Hero from '../components/Hero/Hero';
-import Stats from '../components/Stats/Stats';
-import Programs from '../components/Programs/Programs';
-import News from '../components/News/News';
-import Testimonials from '../components/Testimonials/Testimonials';
-import CTA from '../components/CTA/CTA';
-import About from './about/AboutSection';
+import Hero from '@/components/Hero/Hero';
+import Stats from '@/components/Stats/Stats';
+import Programs from '@/components/Programs/Programs';
+import News from '@/components/News/News';
+import Testimonials from '@/components/Testimonials/Testimonials';
+import CTA from '@/components/CTA/CTA';
+import About from '@/app/about/AboutSection';
 import Script from 'next/script';
 
 export default function Home() {
